@@ -65,12 +65,20 @@ export const projects: Project[] = [
   },
   {
     title: "Alarm Clock App",
-    tech: "Android",
-    description: "Alarm app with alert box; stops either manually or after 60 seconds.",
-    tags: ["Android", "Alerts", "Timer"],
+    tech: "Java + XML",
+    description: "Advanced alarm app built with Java and XML, featuring key Android components like AlarmManager and BroadcastReceiver for accurate alarm scheduling. Enhanced with Glide library for smooth image blurring effects.",
+    tags: ["Android", "Java", "XML", "AlarmManager"],
     color: "red",
     type: "app",
     githubUrl: "https://github.com/Light-cy/CODSOFT/tree/Alarm_clock_app_codsoft_task3",
+    features: [
+      "Automatically stops the alarm after 1 second if not dismissed ⏱️",
+      "Auto-stop after 1 minute when phone is locked 🔒",
+      "Clean UI with modern look built entirely in XML 🎨",
+      "Accurate alarm scheduling with AlarmManager ⚡",
+      "Smooth image blurring effects using Glide library ✨",
+      "BroadcastReceiver for reliable alarm handling 📡"
+    ],
     images: [
       "/lovable-uploads/d14554f6-616f-4813-bd21-9f0f64f25513.png",
       "/lovable-uploads/874d18cd-0b9a-4654-85fa-3807ee5f8f05.png",
