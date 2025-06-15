@@ -141,23 +141,27 @@ export default function ProjectsSection() {
         return (
           <motion.div
             key={index}
-            className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${project.color}-500/8 to-transparent border border-${project.color}-500/20 hover:border-${project.color}-500/40 backdrop-blur-sm overflow-hidden cursor-pointer transition-all duration-300`}
+            className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${project.color}-500/8 to-transparent border border-${project.color}-500/20 hover:border-${project.color}-500/40 backdrop-blur-sm overflow-hidden cursor-pointer`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ 
               y: -8,
               rotate: -1,
               boxShadow: `0 20px 40px rgba(${project.color === 'cyan' ? '6, 182, 212' : project.color === 'purple' ? '147, 51, 234' : project.color === 'blue' ? '59, 130, 246' : project.color === 'green' ? '34, 197, 94' : project.color === 'orange' ? '249, 115, 22' : project.color === 'red' ? '239, 68, 68' : '236, 72, 153'}, 0.2)`,
-              transition: { duration: 0.3, ease: "easeOut" }
+              transition: { duration: 0.15, ease: "easeOut" }
             }}
-            transition={{ delay: index * 0.05, duration: 0.3 }}
+            transition={{ 
+              delay: index * 0.05, 
+              duration: 0.3,
+              layout: { duration: 0.15, ease: "easeOut" }
+            }}
             viewport={{ once: true }}
             onClick={() => handleProjectClick(project)}
           >
             <motion.div 
               className="absolute top-4 right-4 flex items-center gap-2"
             >
-              <Icon className={`w-5 h-5 text-${project.color}-300 opacity-60 group-hover:opacity-100 transition-opacity`} />
+              <Icon className={`w-5 h-5 text-${project.color}-300 opacity-60 group-hover:opacity-100 transition-opacity duration-150`} />
               <div className="w-2 h-2 rounded-full bg-gradient-to-r from-white/20 to-white/40" />
             </motion.div>
             
@@ -166,7 +170,7 @@ export default function ProjectsSection() {
                 className={`text-xl font-bold text-${project.color}-300 mb-2 pr-12`}
                 whileHover={{ 
                   x: 2,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.1 }
                 }}
               >
                 {project.title} <span className="text-sm text-gray-400">({project.tech})</span>
@@ -180,7 +184,7 @@ export default function ProjectsSection() {
                     whileHover={{
                       rotate: 5,
                       scale: 1.05,
-                      transition: { duration: 0.2 }
+                      transition: { duration: 0.1 }
                     }}
                   >
                     {tag}
@@ -188,7 +192,7 @@ export default function ProjectsSection() {
                 ))}
               </div>
               
-              <div className="mt-4 text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="mt-4 text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
                 {project.type === "web" ? "Click to view live site" : "Click to view app details"}
               </div>
             </div>
