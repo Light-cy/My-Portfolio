@@ -37,7 +37,7 @@ const projects: Project[] = [
     tags: ["HTML/CSS/JS", "Local Storage", "Dynamic UI"],
     color: "purple",
     type: "web",
-    liveUrl: "https://rps-game.example.com",
+    liveUrl: "https://rock-paper-scissors-game-by-light.netlify.app/",
     githubUrl: "https://github.com/username/rps-game"
   },
   {
