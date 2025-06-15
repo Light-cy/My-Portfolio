@@ -38,47 +38,47 @@ export default function ExperienceSection() {
       {experiences.map((exp, index) => (
         <motion.div
           key={index}
-          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${exp.color}-500/8 to-transparent border border-${exp.color}-500/20 hover:border-${exp.color}-500/40 transition-all duration-300 cursor-pointer`}
-          initial={{ opacity: 0, x: -60, scale: 0.95 }}
+          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${exp.color}-500/8 to-transparent border border-${exp.color}-500/20 hover:border-${exp.color}-500/40 transition-all duration-150 cursor-pointer`}
+          initial={{ opacity: 0, x: -40, scale: 0.98 }}
           whileInView={{ 
             opacity: 1, 
             x: 0, 
             scale: 1,
             transition: {
-              delay: index * 0.2,
-              duration: 0.8,
-              ease: [0.25, 0.46, 0.45, 0.94]
+              delay: index * 0.08,
+              duration: 0.4,
+              ease: [0.16, 1, 0.3, 1]
             }
           }}
           whileHover={{ 
-            x: 12,
-            rotate: 1,
-            scale: 1.02,
-            boxShadow: "0 15px 40px rgba(0, 0, 0, 0.4)",
-            transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
+            x: 8,
+            rotate: 0.5,
+            scale: 1.01,
+            boxShadow: "0 12px 35px rgba(0, 0, 0, 0.35)",
+            transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] }
           }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-30px" }}
         >
           <motion.div 
             className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-${exp.color}-400 to-${exp.color}-600 rounded-r`}
             initial={{ height: 0 }}
             whileInView={{ 
               height: "100%",
-              transition: { delay: index * 0.2 + 0.3, duration: 0.6 }
+              transition: { delay: index * 0.08 + 0.15, duration: 0.3 }
             }}
             whileHover={{ 
-              width: 6,
-              transition: { duration: 0.3 }
+              width: 4,
+              transition: { duration: 0.15 }
             }}
           />
           
           <motion.h3 
             className={`text-xl font-bold bg-gradient-to-r from-${exp.color}-300 to-${exp.color}-400 bg-clip-text text-transparent mb-1`}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ 
               opacity: 1, 
               y: 0,
-              transition: { delay: index * 0.2 + 0.2, duration: 0.6 }
+              transition: { delay: index * 0.08 + 0.1, duration: 0.3 }
             }}
           >
             {exp.title}
@@ -86,11 +86,11 @@ export default function ExperienceSection() {
           
           <motion.p 
             className="text-white/80 font-semibold mb-1"
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ 
               opacity: 1, 
               y: 0,
-              transition: { delay: index * 0.2 + 0.3, duration: 0.6 }
+              transition: { delay: index * 0.08 + 0.15, duration: 0.3 }
             }}
           >
             {exp.company}
@@ -98,11 +98,11 @@ export default function ExperienceSection() {
           
           <motion.p 
             className="text-sm text-gray-400 mb-3"
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ 
               opacity: 1, 
               y: 0,
-              transition: { delay: index * 0.2 + 0.4, duration: 0.6 }
+              transition: { delay: index * 0.08 + 0.2, duration: 0.3 }
             }}
           >
             {exp.period}
@@ -110,11 +110,11 @@ export default function ExperienceSection() {
           
           <motion.p 
             className="text-gray-300"
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ 
               opacity: 1, 
               y: 0,
-              transition: { delay: index * 0.2 + 0.5, duration: 0.6 }
+              transition: { delay: index * 0.08 + 0.25, duration: 0.3 }
             }}
           >
             {exp.description}
