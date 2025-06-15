@@ -17,7 +17,10 @@ const skillCategories = [
     skills: [
       { name: "Firebase", color: "orange" },
       { name: "SQLite", color: "blue" },
-      { name: "Postman", color: "orange" }
+      { name: "Postman", color: "orange" },
+      { name: "VSCode", color: "blue" },
+      { name: "Android Studio", color: "green" },
+      { name: "MySQL Workbench", color: "cyan" }
     ]
   },
   {
