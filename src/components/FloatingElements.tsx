@@ -18,19 +18,20 @@ const FloatingElements = () => {
           key={index}
           className={`absolute ${element.color} ${element.size} opacity-40`}
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${20 + Math.random() * 60}%`,
+            top: `${20 + Math.random() * 60}%`,
           }}
           animate={{
-            x: [0, Math.random() * 100 - 50, 0],
-            y: [0, Math.random() * 100 - 50, 0],
-            rotate: [0, 360],
+            x: [0, 80, -40, 60, 0],
+            y: [0, -60, 40, -30, 0],
+            rotate: [0, 180, 360],
+            scale: [1, 1.1, 0.9, 1.05, 1],
           }}
           transition={{
-            duration: 15 + index * 2,
+            duration: 20 + index * 3,
             repeat: Infinity,
-            ease: "linear",
-            delay: index * 2,
+            ease: "easeInOut",
+            delay: index * 1.5,
           }}
         >
           <element.Icon />
