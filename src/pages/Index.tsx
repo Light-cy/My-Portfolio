@@ -27,7 +27,7 @@ export default function Index() {
   useForceDarkTheme();
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-black text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-black text-white">
       <AnimatedParticlesBg />
       <FloatingElements />
       <EnhancedBackground />
@@ -35,20 +35,20 @@ export default function Index() {
       <HeroSection />
 
       {/* CENTERED SECTIONS BELOW HERO */}
-      <div className="relative z-30 flex flex-col items-center justify-center px-6 py-12 space-y-12">
-        <div className="max-w-7xl w-full">
+      <div className="relative z-30 px-6 py-12 space-y-12">
+        <div className="max-w-7xl mx-auto">
           <SectionCard id="profile" title="Profile" icon={User} color="cyan">
             <ProfileSection />
           </SectionCard>
         </div>
 
-        <div className="max-w-7xl w-full">
+        <div className="max-w-7xl mx-auto">
           <SectionCard id="experience" title="Experience" icon={Briefcase} color="purple">
             <ExperienceSection />
           </SectionCard>
         </div>
 
-        <div className="max-w-7xl w-full">
+        <div className="max-w-7xl mx-auto">
           <SectionCard id="education" title="Education" icon={GraduationCap} color="blue">
             <EducationSection />
           </SectionCard>
@@ -56,7 +56,7 @@ export default function Index() {
 
         <SectionDivider />
 
-        <div className="max-w-7xl w-full">
+        <div className="max-w-7xl mx-auto">
           <SectionCard id="skills" title="Skills" icon={Code} color="green">
             <SkillsSection />
           </SectionCard>
@@ -64,7 +64,7 @@ export default function Index() {
 
         <SectionDivider />
 
-        <div className="max-w-7xl w-full">
+        <div className="max-w-7xl mx-auto">
           <SectionCard id="projects" title="Projects" icon={FolderOpen} color="pink">
             <ProjectsSection />
           </SectionCard>
@@ -72,7 +72,7 @@ export default function Index() {
 
         <SectionDivider />
 
-        <div className="max-w-7xl w-full">
+        <div className="max-w-7xl mx-auto">
           <SectionCard id="contact" title="Contact" icon={Mail} color="orange">
             <ContactSection />
           </SectionCard>

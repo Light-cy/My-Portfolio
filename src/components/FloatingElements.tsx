@@ -17,19 +17,13 @@ const FloatingElements = () => {
         <motion.div
           key={index}
           className={`absolute ${element.color} ${element.size} opacity-40`}
-          initial={{
-            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
           }}
           animate={{
-            x: [
-              Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-              Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-            ],
-            y: [
-              Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-              Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-            ],
+            x: [0, Math.random() * 100 - 50, 0],
+            y: [0, Math.random() * 100 - 50, 0],
             rotate: [0, 360],
           }}
           transition={{
