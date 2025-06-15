@@ -101,3 +101,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide the scrollbar (for all browsers) */
+.scrollbar-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
+}

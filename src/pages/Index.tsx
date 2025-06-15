@@ -55,11 +55,21 @@ function useForceDarkTheme() {
 
 const glowStyle = "bg-gradient-to-r from-blue-700/80 via-fuchsia-800/60 to-cyan-600/80 blur-xl opacity-60";
 
+// Custom section cards for resume info
+function SectionCard({ title, children }: { title: string, children: React.ReactNode }) {
+  return (
+    <section className="relative max-w-2xl w-full my-6 px-6 py-5 rounded-2xl bg-background/80 backdrop-blur border border-border shadow-lg z-30 mx-auto">
+      <h2 className="text-xl md:text-2xl font-extrabold mb-2 text-cyan-300">{title}</h2>
+      <div className="text-base md:text-lg text-foreground/90">{children}</div>
+    </section>
+  )
+}
+
 export default function Index() {
   useForceDarkTheme();
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden dark:bg-background transition-colors duration-500">
+    <div className="relative min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden dark:bg-background transition-colors duration-500 scrollbar-hidden">
       <AnimatedParticlesBg />
       <SvgBlobs />
 
@@ -85,7 +95,6 @@ export default function Index() {
               Software Engineer &nbsp;·&nbsp; Web Designer &nbsp;·&nbsp; Animations Enthusiast
             </span>
           </p>
-
           <motion.div
             className="flex gap-4 mt-3"
             initial={{ opacity: 0, y: 16 }}
@@ -119,6 +128,70 @@ export default function Index() {
           </motion.div>
         </motion.div>
       </main>
+
+      {/* Resume Info Sections */}
+      <div className="relative z-30 flex-1 w-full flex flex-col items-center pb-36">
+        <SectionCard title="Profile">
+          Detail-oriented and innovative Software Engineer passionate about building beautiful, user-centric products. Experience across frontend, backend, full stack web development, with strong skills in UI/UX design, animation, and performance optimization.
+        </SectionCard>
+        <SectionCard title="Experience">
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              <strong>Frontend Developer</strong> · XYZ Company, 2023–Present<br />
+              Built and maintained complex web apps with React/TypeScript. Improved page load time by 35% using code splitting and performance audits. Collaborated closely with design teams for pixel-perfect UIs.
+            </li>
+            <li>
+              <strong>Web Animation Specialist</strong> · ABC Studio, 2022–2023<br />
+              Created interactive SVG/CSS/webGL animations for top client websites and product launches. Conducted animation workshops for internal teams.
+            </li>
+          </ul>
+        </SectionCard>
+        <SectionCard title="Education">
+          <ul className="list-disc list-inside">
+            <li>
+              <strong>Bachelor of Science in Computer Science</strong><br />
+              National University of Computer & Emerging Sciences (FAST-NUCES), 2019–2023
+            </li>
+          </ul>
+        </SectionCard>
+        <SectionCard title="Skills">
+          <div className="flex flex-wrap gap-2">
+            <span className="px-3 py-1 rounded-2xl bg-cyan-900/30 text-cyan-200 text-sm font-semibold">React</span>
+            <span className="px-3 py-1 rounded-2xl bg-fuchsia-900/30 text-fuchsia-200 text-sm font-semibold">TypeScript</span>
+            <span className="px-3 py-1 rounded-2xl bg-indigo-900/30 text-indigo-200 text-sm font-semibold">Tailwind CSS</span>
+            <span className="px-3 py-1 rounded-2xl bg-blue-800/30 text-blue-200 text-sm font-semibold">Shadcn UI</span>
+            <span className="px-3 py-1 rounded-2xl bg-green-900/30 text-green-200 text-sm font-semibold">Node.js</span>
+            <span className="px-3 py-1 rounded-2xl bg-gray-700/30 text-gray-200 text-sm font-semibold">UI/UX Design</span>
+            <span className="px-3 py-1 rounded-2xl bg-pink-900/20 text-pink-200 text-sm font-semibold">Web Animation</span>
+            <span className="px-3 py-1 rounded-2xl bg-yellow-800/20 text-yellow-100 text-sm font-semibold">Performance Optimization</span>
+            <span className="px-3 py-1 rounded-2xl bg-violet-800/20 text-violet-100 text-sm font-semibold">Framer Motion</span>
+            {/* Add more as needed from resume */}
+          </div>
+        </SectionCard>
+        <SectionCard title="Projects">
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              <strong>Animated Portfolio Website</strong><br />
+              Fully responsive React/TypeScript site with advanced SVG and Framer Motion animations. Featured on web design inspiration galleries.
+            </li>
+            <li>
+              <strong>Performance Dashboard</strong><br />
+              Data-driven dashboard for monitoring web performance using Recharts, React Query, and Tailwind.
+            </li>
+            <li>
+              <strong>UI Component Library</strong><br />
+              Designed a custom, accessible UI component library used in multiple client-facing projects.
+            </li>
+          </ul>
+        </SectionCard>
+        <SectionCard title="Contact">
+          <div>
+            <div>Email: <a href="mailto:qaseeb.ahmad@email.com" className="underline text-cyan-300">qaseeb.ahmad@email.com</a></div>
+            <div>LinkedIn: <a href="https://linkedin.com/in/qaseebahmad" target="_blank" rel="noopener" className="underline text-cyan-300">linkedin.com/in/qaseebahmad</a></div>
+            <div>GitHub: <a href="https://github.com/qaseebahmad" target="_blank" rel="noopener" className="underline text-cyan-300">github.com/qaseebahmad</a></div>
+          </div>
+        </SectionCard>
+      </div>
 
       {/* Scroll Down Arrow */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none select-none">
