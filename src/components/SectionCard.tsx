@@ -26,7 +26,6 @@ export default function SectionCard({
       <motion.div
         className="relative px-8 py-10 rounded-3xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-xl overflow-hidden"
         whileHover={{ 
-          x: 5,
           rotate: 0.5,
           transition: { duration: 0.3, ease: "easeOut" }
         }}
@@ -42,10 +41,6 @@ export default function SectionCard({
         >
           <motion.h2 
             className={`flex items-center gap-4 text-2xl sm:text-3xl md:text-4xl font-black mb-6 tracking-tight text-${color}-300 uppercase font-orbitron`}
-            whileHover={{ 
-              x: 3,
-              transition: { duration: 0.2 }
-            }}
           >
             <motion.div
               className={`p-3 rounded-xl bg-${color}-500/20 border border-${color}-500/30`}
