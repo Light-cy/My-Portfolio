@@ -147,12 +147,12 @@ export default function AppDetails() {
             {project.images && project.images.length > 0 && (
               <>
                 {/* Main Image */}
-                <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+                <div className="relative w-full max-w-md mx-auto aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
                   <motion.img
                     key={currentImageIndex}
                     src={project.images[currentImageIndex]}
                     alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain bg-white/5"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3 }}
@@ -192,7 +192,7 @@ export default function AppDetails() {
 
                 {/* Thumbnail Gallery */}
                 {project.images.length > 1 && (
-                  <div className="grid grid-cols-4 gap-3">
+                  <div className="grid grid-cols-4 gap-3 max-w-md mx-auto">
                     {project.images.map((image, index) => (
                       <button
                         key={index}
