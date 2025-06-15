@@ -36,19 +36,19 @@ export default function Index() {
 
       {/* CENTERED SECTIONS BELOW HERO */}
       <div className="relative z-30 flex flex-col items-center justify-center px-6 py-12 space-y-12">
-        <div className="max-w-6xl w-full">
+        <div className="max-w-7xl w-full">
           <SectionCard id="profile" title="Profile" icon={User} color="cyan">
             <ProfileSection />
           </SectionCard>
         </div>
 
-        <div className="max-w-6xl w-full">
+        <div className="max-w-7xl w-full">
           <SectionCard id="experience" title="Experience" icon={Briefcase} color="purple">
             <ExperienceSection />
           </SectionCard>
         </div>
 
-        <div className="max-w-6xl w-full">
+        <div className="max-w-7xl w-full">
           <SectionCard id="education" title="Education" icon={GraduationCap} color="blue">
             <EducationSection />
           </SectionCard>
@@ -56,7 +56,7 @@ export default function Index() {
 
         <SectionDivider />
 
-        <div className="max-w-6xl w-full">
+        <div className="max-w-7xl w-full">
           <SectionCard id="skills" title="Skills" icon={Code} color="green">
             <SkillsSection />
           </SectionCard>
@@ -64,7 +64,7 @@ export default function Index() {
 
         <SectionDivider />
 
-        <div className="max-w-6xl w-full">
+        <div className="max-w-7xl w-full">
           <SectionCard id="projects" title="Projects" icon={FolderOpen} color="pink">
             <ProjectsSection />
           </SectionCard>
@@ -72,7 +72,7 @@ export default function Index() {
 
         <SectionDivider />
 
-        <div className="max-w-6xl w-full">
+        <div className="max-w-7xl w-full">
           <SectionCard id="contact" title="Contact" icon={Mail} color="orange">
             <ContactSection />
           </SectionCard>
