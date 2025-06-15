@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 const skillCategories = [
@@ -14,22 +13,11 @@ const skillCategories = [
     ]
   },
   {
-    title: "Frontend Technologies",
-    skills: [
-      { name: "React", color: "cyan" },
-      { name: "TypeScript", color: "blue" },
-      { name: "Tailwind CSS", color: "teal" },
-      { name: "Shadcn UI", color: "purple" },
-      { name: "Framer Motion", color: "indigo" }
-    ]
-  },
-  {
     title: "Tools & Platforms",
     skills: [
       { name: "Firebase", color: "orange" },
       { name: "SQLite", color: "blue" },
-      { name: "Postman", color: "orange" },
-      { name: "Node.js", color: "green" }
+      { name: "Postman", color: "orange" }
     ]
   },
   {
@@ -40,7 +28,6 @@ const skillCategories = [
       { name: "Debugging", color: "red" },
       { name: "Error Testing", color: "yellow" },
       { name: "UI/UX Design", color: "pink" },
-      { name: "Web Animation", color: "purple" },
       { name: "Performance Optimization", color: "teal" }
     ]
   },
