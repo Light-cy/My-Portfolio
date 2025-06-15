@@ -1,4 +1,3 @@
-
 export interface Project {
   title: string;
   tech: string;
@@ -91,7 +90,7 @@ export const projects: Project[] = [
   {
     title: "Instagram Clone",
     tech: "Firebase",
-    description: "Basic Instagram-like app using Firebase for authentication and media storage. Project is still ongoing to implement more features.",
+    description: "Basic Instagram-like app using Firebase for authentication and media storage. This project is still ongoing with more features being implemented.",
     tags: ["Firebase", "Authentication", "Media Storage", "In Progress"],
     color: "pink",
     type: "app",
