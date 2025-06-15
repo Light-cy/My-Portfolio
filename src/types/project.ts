@@ -1,3 +1,4 @@
+
 export interface Project {
   title: string;
   tech: string;
@@ -6,6 +7,7 @@ export interface Project {
   color: string;
   type: "web" | "app";
   githubUrl: string;
+  liveUrl?: string;
   images?: string[];
   features?: string[];
 }
@@ -50,6 +52,26 @@ export const projects: Project[] = [
       "Includes animated loading and color-coded text for better UX 🎨",
       "Clears screen and waits with messages using system(\"cls\") and Sleep() ⏱️"
     ]
+  },
+  {
+    title: "Flipkart Clone",
+    tech: "HTML/CSS",
+    description: "Static e-commerce UI clone with responsive design.",
+    tags: ["HTML/CSS", "UI", "Responsive"],
+    color: "blue",
+    type: "web",
+    liveUrl: "https://flipcartclonesites.netlify.app/",
+    githubUrl: "https://github.com/Light-cy/flipkart-clone"
+  },
+  {
+    title: "Rock-Paper-Scissors Game",
+    tech: "HTML/CSS/JS",
+    description: "Interactive browser game with local storage and dynamic UI.",
+    tags: ["HTML/CSS/JS", "Local Storage", "Dynamic UI"],
+    color: "purple",
+    type: "web",
+    liveUrl: "https://rock-paper-scissors-game-by-light.netlify.app/",
+    githubUrl: "https://github.com/Light-cy/rps-game"
   },
   {
     title: "Quiz App",
@@ -132,7 +154,7 @@ export const projects: Project[] = [
       "/lovable-uploads/819a3ccd-683a-4011-a4b1-72af0cb69852.png",
       "/lovable-uploads/00b9850b-bb24-4042-885b-bb90b61e9139.png",
       "/lovable-uploads/d216898b-9c6e-460e-bb39-727a36543dd9.png",
-      "/lovable-uploads/fc2f93ee-abb0-4029-a002-eeaf22643bd0.png"
+      "/lovable-uploads/fc2f93ee-abb0-4029-a002-eeaf22643dd0.png"
     ]
   }
 ];
