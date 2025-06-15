@@ -38,30 +38,50 @@ export default function ProjectsSection() {
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${project.color}-500/8 to-transparent border border-${project.color}-500/20 hover:border-${project.color}-500/40 backdrop-blur-sm overflow-hidden`}
+          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${project.color}-500/8 to-transparent border border-${project.color}-500/20 hover:border-${project.color}-500/40 backdrop-blur-sm overflow-hidden cursor-pointer`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           whileHover={{ 
-            scale: 1.02, 
-            y: -5,
-            transition: { duration: 0.2 }
+            y: -8,
+            rotate: -1,
+            boxShadow: `0 20px 40px rgba(${project.color === 'cyan' ? '6, 182, 212' : project.color === 'purple' ? '147, 51, 234' : project.color === 'blue' ? '59, 130, 246' : '34, 197, 94'}, 0.2)`,
+            transition: { duration: 0.3, ease: "easeOut" }
           }}
           transition={{ delay: index * 0.05, duration: 0.3 }}
           viewport={{ once: true }}
         >
+          <motion.div 
+            className="absolute top-2 right-2 w-2 h-2 rounded-full bg-gradient-to-r from-white/20 to-white/40"
+            whileHover={{ 
+              scale: [1, 1.5, 1],
+              rotate: 360,
+              transition: { duration: 0.5 }
+            }}
+          />
           <div className="relative z-10">
-            <h3 className={`text-xl font-bold text-${project.color}-300 mb-2`}>
+            <motion.h3 
+              className={`text-xl font-bold text-${project.color}-300 mb-2`}
+              whileHover={{ 
+                x: 2,
+                transition: { duration: 0.2 }
+              }}
+            >
               {project.title} <span className="text-sm text-gray-400">({project.tech})</span>
-            </h3>
+            </motion.h3>
             <p className="text-gray-300 mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag, tagIndex) => (
-                <span
+                <motion.span
                   key={tagIndex}
                   className={`text-xs px-3 py-1 rounded-full bg-${project.color}-500/20 text-${project.color}-200 border border-${project.color}-500/30`}
+                  whileHover={{
+                    rotate: 5,
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
                 >
                   {tag}
-                </span>
+                </motion.span>
               ))}
             </div>
           </div>

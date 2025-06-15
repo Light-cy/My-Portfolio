@@ -77,7 +77,15 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.5, ease: "easeOut" }}
         >
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ duration: 0.15 }}>
+          <motion.div 
+            whileHover={{ 
+              rotate: [0, -2, 2, 0],
+              y: -3,
+              transition: { duration: 0.3 } 
+            }} 
+            whileTap={{ scale: 0.9 }} 
+            transition={{ duration: 0.15 }}
+          >
             <Button
               asChild
               className="relative px-10 py-4 text-lg font-black rounded-2xl overflow-hidden group font-space"
@@ -95,14 +103,29 @@ export default function HeroSection() {
                   }}
                 />
                 <span className="relative z-10 flex items-center gap-2">
-                  <Rocket className="w-5 h-5" />
+                  <motion.div
+                    whileHover={{ 
+                      rotate: 15,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    <Rocket className="w-5 h-5" />
+                  </motion.div>
                   View My Work
                 </span>
               </a>
             </Button>
           </motion.div>
           
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ duration: 0.15 }}>
+          <motion.div 
+            whileHover={{ 
+              x: 3,
+              rotate: 1,
+              transition: { duration: 0.2 } 
+            }} 
+            whileTap={{ scale: 0.9 }} 
+            transition={{ duration: 0.15 }}
+          >
             <Button
               asChild
               variant="outline"
@@ -110,7 +133,14 @@ export default function HeroSection() {
             >
               <a href="#contact">
                 <span className="flex items-center gap-2">
-                  <Zap className="w-5 h-5" />
+                  <motion.div
+                    whileHover={{ 
+                      scale: [1, 1.2, 1],
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    <Zap className="w-5 h-5" />
+                  </motion.div>
                   Let's Connect
                 </span>
               </a>
