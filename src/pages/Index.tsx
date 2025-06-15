@@ -1,7 +1,7 @@
 // HomePage – Futuristic, Attractive Hero Section
 
 import AnimatedParticlesBg from "@/components/AnimatedParticlesBg";
-import { motion } from "framer-motion";
+import { motion, cubicBezier } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 // SVG Blobs to layer behind content for extra "jazzy" look
@@ -30,13 +30,15 @@ function SvgBlobs() {
   );
 }
 
+const easeBezier = cubicBezier(0.42, 0, 0.58, 1);
+
 const heroVariants = {
   hidden: { opacity: 0, y: 60, scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.95, ease: [0.42, 0, 0.58, 1] }
+    transition: { duration: 0.95, ease: easeBezier }
   },
 };
 
@@ -75,7 +77,7 @@ export default function Index() {
             className="flex gap-4 mt-3"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, type: "spring", stiffness: 120, ease: [0.42, 0, 0.58, 1] }}
+            transition={{ delay: 0.7, type: "spring", stiffness: 120, ease: easeBezier }}
           >
             <a href="#work" className="px-5 py-2 rounded shadow bg-primary text-primary-foreground font-semibold hover:scale-105 transition-transform hover:shadow-lg ring-2 ring-transparent hover:ring-cyan-500/70 duration-150">
               View My Work
@@ -96,7 +98,7 @@ export default function Index() {
           transition={{
             repeat: Infinity,
             duration: 1.65,
-            ease: [0.42, 0, 0.58, 1]
+            ease: easeBezier
           }}
         >
           <ChevronDown className="w-8 h-8 text-muted-foreground/70 animate-pulse" strokeWidth={2.3} />
