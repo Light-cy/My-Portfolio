@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, ExternalLink, Copy, CheckCircle } from "lucide-react";
 import { useState } from "react";
@@ -14,16 +13,16 @@ const contactInfo = [
   },
   { 
     label: "LinkedIn", 
-    value: "linkedin.com/in/qaseebahmad", 
-    href: "https://linkedin.com/in/qaseebahmad",
+    value: "linkedin.com/in/qaseeb-ahmad-a97805293", 
+    href: "https://linkedin.com/in/qaseeb-ahmad-a97805293",
     icon: Linkedin,
     color: "blue",
     description: "Let's connect professionally"
   },
   { 
     label: "GitHub", 
-    value: "github.com/qaseebahmad", 
-    href: "https://github.com/qaseebahmad",
+    value: "github.com/Light-cy", 
+    href: "https://github.com/Light-cy",
     icon: Github,
     color: "purple",
     description: "Check out my code"
