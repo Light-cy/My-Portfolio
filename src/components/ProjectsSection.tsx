@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ExternalLink, Smartphone } from "lucide-react";
@@ -57,10 +56,12 @@ const projects: Project[] = [
     tags: ["Android", "SQLite", "Quiz"],
     color: "green",
     type: "app",
-    githubUrl: "https://github.com/username/quiz-app",
+    githubUrl: "https://github.com/Light-cy/CODSOFT",
     images: [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+      "/lovable-uploads/a61a0bef-f2c1-4faf-b454-1506eaa29ab3.png",
+      "/lovable-uploads/0c1a2fab-83ea-4bf6-b9a6-d74e2d5770dd.png",
+      "/lovable-uploads/a2faf440-3970-473b-88fe-f2cab70137d2.png",
+      "/lovable-uploads/52838fe3-3399-403b-91e3-4fd06c44511e.png"
     ]
   },
   {
