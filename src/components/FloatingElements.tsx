@@ -35,13 +35,13 @@ const FloatingElements = () => {
               Math.random() * window.innerHeight,
             ],
             rotate: [0, 360, 720],
-            scale: [1, 1.5, 1],
+            scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 15 + index * 2,
+            duration: 8 + index,
             repeat: Infinity,
-            ease: "linear",
-            delay: index * 0.5,
+            ease: "easeInOut",
+            delay: index * 0.3,
           }}
         >
           <element.Icon />

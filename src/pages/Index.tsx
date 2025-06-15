@@ -6,9 +6,10 @@ import { ChevronDown, Sparkles, Zap, Rocket, Code, User, Briefcase, GraduationCa
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
-// Custom easing curves for smooth animations
+// Smoother and faster easing curves
 const easeBezier = cubicBezier(0.25, 0.46, 0.45, 0.94);
-const bounceEasing = cubicBezier(0.68, -0.55, 0.265, 1.55);
+const bounceEasing = cubicBezier(0.34, 1.56, 0.64, 1);
+const fastEasing = cubicBezier(0.4, 0, 0.2, 1);
 
 // Sticky/floating nav bar with glassmorphism
 function FloatingNav() {
@@ -17,7 +18,7 @@ function FloatingNav() {
       className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-screen pointer-events-none"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: easeBezier, delay: 0.5 }}
+      transition={{ duration: 0.6, ease: fastEasing, delay: 0.2 }}
     >
       <div className="mx-auto max-w-2xl flex justify-center gap-2 mt-6 p-3 bg-black/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 pointer-events-auto">
         {[
@@ -31,19 +32,19 @@ function FloatingNav() {
           <motion.a
             key={item.href}
             href={item.href}
-            className={`group relative flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl transition-all duration-300 
+            className={`group relative flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl transition-all duration-200 
               hover:bg-${item.color}-500/20 hover:shadow-lg hover:shadow-${item.color}-500/25 hover:scale-105 
               text-${item.color}-300 hover:text-${item.color}-200`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
+            transition={{ delay: 0.3 + index * 0.05, duration: 0.3 }}
           >
             <item.icon className="w-4 h-4" />
             <span className="hidden sm:block">{item.label}</span>
             <motion.div
-              className={`absolute inset-0 rounded-xl bg-gradient-to-r from-${item.color}-500/0 to-${item.color}-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+              className={`absolute inset-0 rounded-xl bg-gradient-to-r from-${item.color}-500/0 to-${item.color}-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
               layoutId={`nav-${item.href}`}
             />
           </motion.a>
@@ -53,14 +54,14 @@ function FloatingNav() {
   );
 }
 
-// Enhanced background with multiple animated layers
+// Enhanced background with faster animated layers
 function EnhancedBackground() {
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden">
       {/* Animated gradient mesh */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/30 to-cyan-900/20" />
       
-      {/* Floating orbs */}
+      {/* Faster floating orbs */}
       {Array.from({ length: 8 }).map((_, i) => (
         <motion.div
           key={i}
@@ -71,15 +72,15 @@ function EnhancedBackground() {
             }, transparent)`
           }}
           animate={{
-            x: [0, 100, -50, 50, 0],
-            y: [0, -100, 50, -30, 0],
+            x: [0, 80, -40, 40, 0],
+            y: [0, -80, 40, -24, 0],
             scale: [1, 1.2, 0.8, 1.1, 1],
           }}
           transition={{
-            duration: 8 + i * 2,
+            duration: 4 + i,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: i * 0.5
+            delay: i * 0.2
           }}
           initial={{
             x: Math.random() * window.innerWidth,
@@ -100,7 +101,7 @@ function useForceDarkTheme() {
   }, []);
 }
 
-// Enhanced section cards with crazy animations
+// Enhanced section cards with faster animations
 function SectionCard({ 
   id, 
   title, 
@@ -120,9 +121,9 @@ function SectionCard({
     offset: ["start end", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.9]);
 
   return (
     <motion.section
@@ -137,29 +138,29 @@ function SectionCard({
           scale: 1.02,
           boxShadow: `0 25px 50px -12px ${color === 'cyan' ? 'rgba(6, 182, 212, 0.25)' : 'rgba(168, 85, 247, 0.25)'}`
         }}
-        transition={{ duration: 0.3, ease: easeBezier }}
+        transition={{ duration: 0.2, ease: fastEasing }}
       >
-        {/* Animated background gradient */}
+        {/* Faster animated background gradient */}
         <motion.div
           className={`absolute inset-0 bg-gradient-to-br from-${color}-500/10 via-purple-500/5 to-pink-500/10 opacity-0 group-hover:opacity-100`}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
         />
         
-        {/* Floating particles inside card */}
+        {/* Faster floating particles inside card */}
         <div className="absolute inset-0 overflow-hidden">
           {Array.from({ length: 3 }).map((_, i) => (
             <motion.div
               key={i}
               className={`absolute w-2 h-2 bg-${color}-400 rounded-full opacity-60`}
               animate={{
-                x: [0, 50, -30, 20, 0],
-                y: [0, -40, 30, -20, 0],
+                x: [0, 40, -24, 16, 0],
+                y: [0, -32, 24, -16, 0],
               }}
               transition={{
-                duration: 4 + i,
+                duration: 2 + i * 0.5,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: i * 0.5
+                delay: i * 0.2
               }}
               style={{
                 left: `${20 + i * 30}%`,
@@ -173,18 +174,18 @@ function SectionCard({
           className="relative z-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: easeBezier }}
+          transition={{ duration: 0.4, ease: fastEasing }}
           viewport={{ once: true }}
         >
           <motion.h2 
             className={`flex items-center gap-4 text-3xl md:text-4xl font-black mb-6 tracking-tight bg-gradient-to-r from-${color}-300 via-white to-${color}-300 bg-clip-text text-transparent drop-shadow-lg uppercase`}
             whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15 }}
           >
             <motion.div
               className={`p-3 rounded-xl bg-gradient-to-br from-${color}-500/20 to-purple-500/20 border border-${color}-500/30`}
               whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6, ease: bounceEasing }}
+              transition={{ duration: 0.4, ease: bounceEasing }}
             >
               <Icon className={`w-6 h-6 text-${color}-300`} />
             </motion.div>
@@ -194,7 +195,7 @@ function SectionCard({
             className="text-lg text-gray-200 leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
             viewport={{ once: true }}
           >
             {children}
@@ -205,7 +206,7 @@ function SectionCard({
   );
 }
 
-// Animated divider with particles
+// Faster animated divider
 function SectionDivider() {
   return (
     <div className="relative flex justify-center items-center h-16 my-8">
@@ -213,17 +214,17 @@ function SectionDivider() {
         className="h-1 w-64 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full"
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: easeBezier }}
+        transition={{ duration: 0.6, ease: fastEasing }}
         viewport={{ once: true }}
       />
       <motion.div
         className="absolute w-4 h-4 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
         animate={{
-          scale: [1, 1.5, 1],
+          scale: [1, 1.3, 1],
           opacity: [1, 0.7, 1],
         }}
         transition={{
-          duration: 2,
+          duration: 1.5,
           repeat: Infinity,
           ease: "easeInOut"
         }}
@@ -246,15 +247,15 @@ export default function Index() {
       <main className="relative flex-1 flex flex-col items-center justify-center z-20 min-h-screen px-6">
         <motion.div
           className="text-center max-w-4xl"
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: bounceEasing }}
+          transition={{ duration: 0.8, ease: bounceEasing }}
         >
           <motion.div
             className="mb-8"
-            initial={{ y: -50, opacity: 0 }}
+            initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: easeBezier }}
+            transition={{ delay: 0.2, duration: 0.5, ease: fastEasing }}
           >
             <span className="inline-flex items-center gap-2 text-sm uppercase tracking-widest bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-bold mb-4">
               <Sparkles className="w-4 h-4 text-cyan-400" />
@@ -265,9 +266,9 @@ export default function Index() {
 
           <motion.h1
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6"
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 1, ease: bounceEasing }}
+            transition={{ delay: 0.3, duration: 0.7, ease: bounceEasing }}
           >
             <motion.span
               className="inline-block bg-gradient-to-r from-cyan-300 via-purple-400 to-pink-400 bg-clip-text text-transparent"
@@ -275,7 +276,7 @@ export default function Index() {
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
               transition={{
-                duration: 3,
+                duration: 2,
                 repeat: Infinity,
                 ease: "linear"
               }}
@@ -289,7 +290,7 @@ export default function Index() {
                 backgroundPosition: ["100% 50%", "0% 50%", "100% 50%"],
               }}
               transition={{
-                duration: 3,
+                duration: 2,
                 repeat: Infinity,
                 ease: "linear"
               }}
@@ -300,9 +301,9 @@ export default function Index() {
 
           <motion.p
             className="text-xl md:text-2xl text-gray-300 font-medium mb-10 max-w-2xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8, ease: easeBezier }}
+            transition={{ delay: 0.5, duration: 0.5, ease: fastEasing }}
           >
             <span className="bg-black/50 backdrop-blur rounded-2xl px-6 py-4 border border-white/10 inline-block">
               ✨ Software Engineer • Web Designer • Animation Enthusiast ✨
@@ -311,11 +312,11 @@ export default function Index() {
 
           <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.8, ease: easeBezier }}
+            transition={{ delay: 0.7, duration: 0.5, ease: fastEasing }}
           >
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ duration: 0.15 }}>
               <Button
                 asChild
                 className="relative px-10 py-4 text-lg font-black rounded-2xl overflow-hidden group"
@@ -327,7 +328,7 @@ export default function Index() {
                       backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                     }}
                     transition={{
-                      duration: 2,
+                      duration: 1.5,
                       repeat: Infinity,
                       ease: "linear"
                     }}
@@ -340,11 +341,11 @@ export default function Index() {
               </Button>
             </motion.div>
             
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ duration: 0.15 }}>
               <Button
                 asChild
                 variant="outline"
-                className="px-10 py-4 text-lg font-black rounded-2xl border-2 border-white/20 bg-black/40 backdrop-blur text-white hover:bg-white/10 hover:border-cyan-400/50"
+                className="px-10 py-4 text-lg font-black rounded-2xl border-2 border-white/20 bg-black/40 backdrop-blur text-white hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-200"
               >
                 <a href="#contact">
                   <span className="flex items-center gap-2">
@@ -365,7 +366,7 @@ export default function Index() {
             className="text-xl leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
             Enthusiastic Computer Science student and developer passionate about innovative software solutions. 
@@ -410,11 +411,11 @@ export default function Index() {
             ].map((exp, index) => (
               <motion.div
                 key={index}
-                className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${exp.color}-500/10 to-transparent border border-${exp.color}-500/20 hover:border-${exp.color}-500/40 transition-all duration-300`}
-                initial={{ opacity: 0, x: -50 }}
+                className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${exp.color}-500/10 to-transparent border border-${exp.color}-500/20 hover:border-${exp.color}-500/40 transition-all duration-200`}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 whileHover={{ scale: 1.02, x: 10 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
                 viewport={{ once: true }}
               >
                 <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-${exp.color}-400 to-${exp.color}-600 rounded-r`} />
@@ -433,7 +434,7 @@ export default function Index() {
           <motion.div
             className="p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border border-blue-500/20"
             whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
           >
             <h3 className="text-xl font-bold text-blue-300 mb-2">Bachelor of Science in Computer Science</h3>
             <p className="text-white/80 font-semibold">National University of Computer & Emerging Sciences (FAST-NUCES)</p>
@@ -462,7 +463,7 @@ export default function Index() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.1, y: -5 }}
-                transition={{ delay: index * 0.1, duration: 0.4 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
                 viewport={{ once: true }}
               >
                 {skill.name}
@@ -508,15 +509,15 @@ export default function Index() {
               <motion.div
                 key={index}
                 className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${project.color}-500/10 to-transparent border border-${project.color}-500/20 hover:border-${project.color}-500/40 backdrop-blur overflow-hidden`}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.05, y: -10 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
                 viewport={{ once: true }}
               >
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br from-${project.color}-500/20 to-transparent opacity-0 group-hover:opacity-100`}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.2 }}
                 />
                 <div className="relative z-10">
                   <h3 className={`text-xl font-bold text-${project.color}-300 mb-2`}>
@@ -550,11 +551,11 @@ export default function Index() {
             ].map((contact, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10 hover:border-orange-500/30 transition-all duration-300"
-                initial={{ opacity: 0, x: -30 }}
+                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10 hover:border-orange-500/30 transition-all duration-200"
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 whileHover={{ scale: 1.02, x: 10 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
                 viewport={{ once: true }}
               >
                 <span className="font-semibold text-orange-300 min-w-[80px]">{contact.label}:</span>
@@ -572,11 +573,11 @@ export default function Index() {
         </SectionCard>
       </div>
 
-      {/* Animated scroll indicator */}
+      {/* Faster animated scroll indicator */}
       <motion.div
         className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
       >
         <ChevronDown className="w-8 h-8 text-cyan-400 animate-pulse" />
         <span className="mt-2 text-xs text-cyan-300/60 tracking-wide">Scroll</span>
