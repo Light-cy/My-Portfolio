@@ -1,0 +1,47 @@
+
+import { motion } from "framer-motion";
+import { User, Briefcase, GraduationCap, Code, FolderOpen, Mail } from "lucide-react";
+
+const fastEasing = [0.4, 0, 0.2, 1];
+
+export default function FloatingNav() {
+  return (
+    <motion.nav 
+      className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-screen pointer-events-none"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: fastEasing, delay: 0.2 }}
+    >
+      <div className="mx-auto max-w-2xl flex justify-center gap-2 mt-6 p-3 bg-black/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 pointer-events-auto">
+        {[
+          { href: "#profile", label: "Profile", icon: User, color: "cyan" },
+          { href: "#experience", label: "Experience", icon: Briefcase, color: "purple" },
+          { href: "#education", label: "Education", icon: GraduationCap, color: "blue" },
+          { href: "#skills", label: "Skills", icon: Code, color: "green" },
+          { href: "#projects", label: "Projects", icon: FolderOpen, color: "pink" },
+          { href: "#contact", label: "Contact", icon: Mail, color: "orange" }
+        ].map((item, index) => (
+          <motion.a
+            key={item.href}
+            href={item.href}
+            className={`group relative flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl transition-all duration-200 
+              hover:bg-${item.color}-500/20 hover:shadow-lg hover:shadow-${item.color}-500/25 hover:scale-105 
+              text-${item.color}-300 hover:text-${item.color}-200`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 + index * 0.05, duration: 0.3 }}
+          >
+            <item.icon className="w-4 h-4" />
+            <span className="hidden sm:block">{item.label}</span>
+            <motion.div
+              className={`absolute inset-0 rounded-xl bg-gradient-to-r from-${item.color}-500/0 to-${item.color}-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
+              layoutId={`nav-${item.href}`}
+            />
+          </motion.a>
+        ))}
+      </div>
+    </motion.nav>
+  );
+}
