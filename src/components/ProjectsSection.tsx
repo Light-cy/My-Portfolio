@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ExternalLink, Smartphone } from "lucide-react";
@@ -71,7 +72,7 @@ const projects: Project[] = [
     tags: ["Android", "API", "Motivational"],
     color: "orange",
     type: "app",
-    githubUrl: "https://github.com/username/quotes-app",
+    githubUrl: "https://github.com/Light-cy/CODSOFT/tree/codsoft_task2_daily_quotes",
     images: [
       "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
