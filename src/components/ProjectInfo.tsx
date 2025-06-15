@@ -71,12 +71,38 @@ export default function ProjectInfo({ project }: ProjectInfoProps) {
         >
           {project.tech}
         </motion.p>
+
+        {/* Key Features Section */}
+        {project.features && (
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+          >
+            <h3 className="text-lg font-semibold text-gray-200 mb-3">Key Features:</h3>
+            <ul className="space-y-2">
+              {project.features.map((feature, index) => (
+                <motion.li
+                  key={index}
+                  className="text-gray-300 text-base flex items-center"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + index * 0.05 }}
+                >
+                  <span className="w-2 h-2 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full mr-3 flex-shrink-0" />
+                  {feature}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
         
         <motion.p 
           className="text-gray-300 text-lg leading-relaxed mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: project.features ? 0.5 : 0.3 }}
         >
           {project.description}
         </motion.p>
@@ -85,7 +111,7 @@ export default function ProjectInfo({ project }: ProjectInfoProps) {
           className="flex flex-wrap gap-3 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: project.features ? 0.6 : 0.4 }}
         >
           {project.tags.map((tag, index) => (
             <span
@@ -105,7 +131,7 @@ export default function ProjectInfo({ project }: ProjectInfoProps) {
         whileTap={{ scale: 0.98 }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: project.features ? 0.7 : 0.5 }}
       >
         <Github className="w-6 h-6" />
         View on GitHub

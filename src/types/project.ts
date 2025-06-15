@@ -8,6 +8,7 @@ export interface Project {
   type: "web" | "app";
   githubUrl: string;
   images?: string[];
+  features?: string[];
 }
 
 export const projects: Project[] = [
@@ -47,6 +48,13 @@ export const projects: Project[] = [
     color: "orange",
     type: "app",
     githubUrl: "https://github.com/Light-cy/CODSOFT/tree/codsoft_task2_daily_quotes",
+    features: [
+      "Real-time quote fetching 🔄",
+      "Like ❤️ / Dislike 💔 functionality",
+      "Copy 📋 & Share 📤 options",
+      "Swipe to refresh 🔃",
+      "Smooth fade animations ✨ using Glide for a polished experience"
+    ],
     images: [
       "/lovable-uploads/1936f69f-1cc9-4e78-b715-919e1381b661.png",
       "/lovable-uploads/fbfdf14f-d33d-4ce8-90f8-ba98bb55c260.png",
