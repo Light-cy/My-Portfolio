@@ -1,6 +1,5 @@
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 interface SectionCardProps {
   id: string;
@@ -17,21 +16,13 @@ export default function SectionCard({
   icon: Icon, 
   color = "cyan" 
 }: SectionCardProps) {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [20, -20]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
   return (
     <motion.section
-      ref={ref}
       id={id}
-      className="relative group max-w-4xl w-full my-12 mx-auto"
-      style={{ y, opacity }}
+      className="relative group w-full"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <motion.div
         className="relative px-8 py-10 rounded-3xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-xl overflow-hidden"
@@ -47,9 +38,8 @@ export default function SectionCard({
         <motion.div
           className="relative z-10"
           initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
         >
           <motion.h2 
             className={`flex items-center gap-4 text-3xl md:text-4xl font-black mb-6 tracking-tight text-${color}-300 uppercase font-orbitron`}
@@ -73,9 +63,8 @@ export default function SectionCard({
           <motion.div 
             className="text-lg text-gray-200 leading-relaxed font-space"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.1, duration: 0.3 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
           >
             {children}
           </motion.div>

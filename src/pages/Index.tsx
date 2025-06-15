@@ -12,7 +12,6 @@ import EducationSection from "@/components/EducationSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
-import ScrollIndicator from "@/components/ScrollIndicator";
 import { User, Briefcase, GraduationCap, Code, FolderOpen, Mail } from "lucide-react";
 import { useEffect } from "react";
 
@@ -37,44 +36,50 @@ export default function Index() {
 
       <HeroSection />
 
-      {/* SECTIONS */}
-      <div className="relative z-30 pb-20">
-        <SectionCard id="profile" title="Profile" icon={User} color="cyan">
-          <ProfileSection />
-        </SectionCard>
+      {/* CENTERED SECTIONS BELOW HERO */}
+      <div className="relative z-30 flex flex-col items-center justify-center px-6 py-20 space-y-12">
+        <div className="max-w-4xl w-full">
+          <SectionCard id="profile" title="Profile" icon={User} color="cyan">
+            <ProfileSection />
+          </SectionCard>
+        </div>
+
+        <div className="max-w-4xl w-full">
+          <SectionCard id="experience" title="Experience" icon={Briefcase} color="purple">
+            <ExperienceSection />
+          </SectionCard>
+        </div>
+
+        <div className="max-w-4xl w-full">
+          <SectionCard id="education" title="Education" icon={GraduationCap} color="blue">
+            <EducationSection />
+          </SectionCard>
+        </div>
 
         <SectionDivider />
 
-        <SectionCard id="experience" title="Experience" icon={Briefcase} color="purple">
-          <ExperienceSection />
-        </SectionCard>
+        <div className="max-w-4xl w-full">
+          <SectionCard id="skills" title="Skills" icon={Code} color="green">
+            <SkillsSection />
+          </SectionCard>
+        </div>
 
         <SectionDivider />
 
-        <SectionCard id="education" title="Education" icon={GraduationCap} color="blue">
-          <EducationSection />
-        </SectionCard>
+        <div className="max-w-4xl w-full">
+          <SectionCard id="projects" title="Projects" icon={FolderOpen} color="pink">
+            <ProjectsSection />
+          </SectionCard>
+        </div>
 
         <SectionDivider />
 
-        <SectionCard id="skills" title="Skills" icon={Code} color="green">
-          <SkillsSection />
-        </SectionCard>
-
-        <SectionDivider />
-
-        <SectionCard id="projects" title="Projects" icon={FolderOpen} color="pink">
-          <ProjectsSection />
-        </SectionCard>
-
-        <SectionDivider />
-
-        <SectionCard id="contact" title="Contact" icon={Mail} color="orange">
-          <ContactSection />
-        </SectionCard>
+        <div className="max-w-4xl w-full">
+          <SectionCard id="contact" title="Contact" icon={Mail} color="orange">
+            <ContactSection />
+          </SectionCard>
+        </div>
       </div>
-
-      <ScrollIndicator />
     </div>
   );
 }
