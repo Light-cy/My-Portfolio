@@ -1,8 +1,6 @@
 
 import { motion } from "framer-motion";
 
-const fastEasing = [0.4, 0, 0.2, 1];
-
 export default function SectionDivider() {
   return (
     <div className="relative flex justify-center items-center h-16 my-8">
@@ -10,7 +8,7 @@ export default function SectionDivider() {
         className="h-1 w-64 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full"
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
-        transition={{ duration: 0.6, ease: fastEasing }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
       />
       <motion.div

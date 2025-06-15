@@ -2,8 +2,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-const fastEasing = [0.4, 0, 0.2, 1];
-
 interface SectionCardProps {
   id: string;
   title: string;
@@ -42,7 +40,7 @@ export default function SectionCard({
           scale: 1.02,
           boxShadow: `0 25px 50px -12px ${color === 'cyan' ? 'rgba(6, 182, 212, 0.25)' : 'rgba(168, 85, 247, 0.25)'}`
         }}
-        transition={{ duration: 0.2, ease: fastEasing }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
       >
         {/* Faster animated background gradient */}
         <motion.div
@@ -78,7 +76,7 @@ export default function SectionCard({
           className="relative z-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: fastEasing }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <motion.h2 
@@ -89,7 +87,7 @@ export default function SectionCard({
             <motion.div
               className={`p-3 rounded-xl bg-gradient-to-br from-${color}-500/20 to-purple-500/20 border border-${color}-500/30`}
               whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+              transition={{ duration: 0.4, ease: "backOut" }}
             >
               <Icon className={`w-6 h-6 text-${color}-300`} />
             </motion.div>

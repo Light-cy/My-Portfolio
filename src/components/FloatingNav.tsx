@@ -2,15 +2,13 @@
 import { motion } from "framer-motion";
 import { User, Briefcase, GraduationCap, Code, FolderOpen, Mail } from "lucide-react";
 
-const fastEasing = [0.4, 0, 0.2, 1];
-
 export default function FloatingNav() {
   return (
     <motion.nav 
       className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-screen pointer-events-none"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: fastEasing, delay: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
     >
       <div className="mx-auto max-w-2xl flex justify-center gap-2 mt-6 p-3 bg-black/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 pointer-events-auto">
         {[
