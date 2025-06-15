@@ -29,15 +29,19 @@ export default function Index() {
 
   return (
     <div className="relative min-h-screen flex flex-col bg-black text-white overflow-x-hidden">
-      <FloatingNav />
       <AnimatedParticlesBg />
       <FloatingElements />
       <EnhancedBackground />
 
       <HeroSection />
 
-      {/* CENTERED SECTIONS BELOW HERO */}
-      <div className="relative z-30 flex flex-col items-center justify-center px-6 py-20 space-y-12">
+      {/* NAVIGATION UNDER HERO SECTION */}
+      <div className="relative z-30 flex justify-center px-6 py-8">
+        <FloatingNav />
+      </div>
+
+      {/* CENTERED SECTIONS BELOW NAVIGATION */}
+      <div className="relative z-30 flex flex-col items-center justify-center px-6 py-12 space-y-12">
         <div className="max-w-4xl w-full">
           <SectionCard id="profile" title="Profile" icon={User} color="cyan">
             <ProfileSection />
