@@ -44,7 +44,7 @@ export default function ExperienceSection() {
           whileHover={{ 
             scale: 1.01, 
             x: 5,
-            transition: { duration: 0.2 }
+            transition: { duration: 0.1 }
           }}
           transition={{ delay: index * 0.05, duration: 0.3 }}
           viewport={{ once: true }}
