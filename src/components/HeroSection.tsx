@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import FloatingNav from "@/components/FloatingNav";
 
 export default function HeroSection() {
   return (
@@ -24,6 +25,11 @@ export default function HeroSection() {
             <Sparkles className="w-4 h-4 text-purple-400" />
           </span>
         </motion.div>
+
+        {/* NAVIGATION ABOVE NAME */}
+        <div className="flex justify-center px-8 py-12 mb-8">
+          <FloatingNav />
+        </div>
 
         <motion.h1
           className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6 font-orbitron"

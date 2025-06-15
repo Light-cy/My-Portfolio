@@ -1,7 +1,5 @@
-
 import AnimatedParticlesBg from "@/components/AnimatedParticlesBg";
 import FloatingElements from "@/components/FloatingElements";
-import FloatingNav from "@/components/FloatingNav";
 import EnhancedBackground from "@/components/EnhancedBackground";
 import HeroSection from "@/components/HeroSection";
 import SectionCard from "@/components/SectionCard";
@@ -35,12 +33,7 @@ export default function Index() {
 
       <HeroSection />
 
-      {/* NAVIGATION UNDER HERO SECTION */}
-      <div className="relative z-30 flex justify-center px-6 py-8">
-        <FloatingNav />
-      </div>
-
-      {/* CENTERED SECTIONS BELOW NAVIGATION */}
+      {/* CENTERED SECTIONS BELOW HERO */}
       <div className="relative z-30 flex flex-col items-center justify-center px-6 py-12 space-y-12">
         <div className="max-w-4xl w-full">
           <SectionCard id="profile" title="Profile" icon={User} color="cyan">
