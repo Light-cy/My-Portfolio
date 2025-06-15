@@ -9,8 +9,8 @@ export default function EducationSection() {
       transition={{ duration: 0.2 }}
     >
       <h3 className="text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent mb-2">Bachelor of Science in Computer Science</h3>
-      <p className="text-white/80 font-semibold">National University of Computer & Emerging Sciences (FAST-NUCES)</p>
-      <p className="text-gray-400">2019–2023</p>
+      <p className="text-white/80 font-semibold">University of the Central Punjab</p>
+      <p className="text-gray-400">2023–Present</p>
     </motion.div>
   );
 }

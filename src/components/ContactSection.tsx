@@ -5,8 +5,8 @@ import { useState } from "react";
 const contactInfo = [
   { 
     label: "Email", 
-    value: "qaseeb.ahmad@email.com", 
-    href: "mailto:qaseeb.ahmad@email.com",
+    value: "qaseebahmed@gmail.com", 
+    href: "mailto:qaseebahmed@gmail.com",
     icon: Mail,
     color: "cyan",
     description: "Drop me a line"
