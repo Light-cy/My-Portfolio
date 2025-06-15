@@ -16,19 +16,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div
       className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${project.color}-500/8 to-transparent border border-${project.color}-500/20 hover:border-${project.color}-500/40 backdrop-blur-sm overflow-hidden cursor-pointer`}
-      initial={{ opacity: 0, y: 15 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ 
-        y: -6,
-        rotate: -0.5,
+        y: -8,
+        rotate: -1,
+        boxShadow: `0 20px 40px rgba(${getProjectShadowColor(project.color)}, 0.2)`,
         transition: { duration: 0.15, ease: "easeOut" }
       }}
       transition={{ 
-        delay: index * 0.03, 
-        duration: 0.25,
-        ease: "easeOut"
+        delay: index * 0.05, 
+        duration: 0.3,
+        layout: { duration: 0.15, ease: "easeOut" }
       }}
-      viewport={{ once: true, margin: "-30px" }}
+      viewport={{ once: true }}
       onClick={() => handleProjectClick(project)}
     >
       <motion.div 
@@ -55,7 +56,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               key={tagIndex}
               className={`text-xs px-3 py-1 rounded-full bg-${project.color}-500/20 text-${project.color}-200 border border-${project.color}-500/30`}
               whileHover={{
-                scale: 1.03,
+                rotate: 5,
+                scale: 1.05,
                 transition: { duration: 0.1 }
               }}
             >
