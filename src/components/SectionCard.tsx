@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 
 interface SectionCardProps {
@@ -24,7 +25,7 @@ export default function SectionCard({
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <motion.div
-        className="relative px-8 py-10 rounded-3xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-xl overflow-hidden"
+        className="relative px-4 sm:px-6 md:px-8 py-10 rounded-3xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-xl overflow-hidden"
         whileHover={{ 
           rotate: 0.5,
           transition: { duration: 0.3, ease: "easeOut" }
