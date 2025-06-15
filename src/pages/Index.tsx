@@ -1,8 +1,9 @@
-// HomePage – Futuristic, Attractive Hero Section
 
 import AnimatedParticlesBg from "@/components/AnimatedParticlesBg";
 import { motion, cubicBezier } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 // SVG Blobs to layer behind content for extra "jazzy" look
 function SvgBlobs() {
@@ -42,11 +43,23 @@ const heroVariants = {
   },
 };
 
-const glowStyle = "bg-gradient-to-r from-blue-600/80 via-fuchsia-500/60 to-cyan-300/80 blur-lg opacity-60";
+// For always-on dark mode
+function useForceDarkTheme() {
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+    return () => {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+}
+
+const glowStyle = "bg-gradient-to-r from-blue-700/80 via-fuchsia-800/60 to-cyan-600/80 blur-xl opacity-60";
 
 export default function Index() {
+  useForceDarkTheme();
+
   return (
-    <div className="relative min-h-screen flex flex-col bg-background text-foreground overflow-hidden">
+    <div className="relative min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden dark:bg-background transition-colors duration-500">
       <AnimatedParticlesBg />
       <SvgBlobs />
 
@@ -54,21 +67,21 @@ export default function Index() {
       <main className="relative flex-1 flex flex-col items-center justify-center z-20 pt-14 pb-28">
         {/* Glow Decor */}
         <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85vw] h-[27vw] rounded-full ${glowStyle}`} aria-hidden />
-
+        
         <motion.div
           className="mx-auto flex flex-col items-center max-w-2xl px-6"
           initial="hidden"
           animate="show"
           variants={heroVariants}
         >
-          <span className="text-xs md:text-sm uppercase mb-4 tracking-wider bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-300 inline-block text-transparent bg-clip-text font-bold animate-fade-in">
+          <span className="text-xs md:text-sm uppercase mb-4 tracking-wider bg-gradient-to-r from-blue-300 via-indigo-400 to-cyan-200 inline-block text-transparent bg-clip-text font-bold animate-fade-in">
             Hi, I&apos;m
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-center bg-gradient-to-br from-cyan-300/90 via-fuchsia-500/80 to-blue-500/90 bg-clip-text text-transparent drop-shadow-lg animate-scale-in mb-2">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-center bg-gradient-to-br from-cyan-200/90 via-fuchsia-400/80 to-blue-400/90 bg-clip-text text-transparent drop-shadow-lg animate-scale-in mb-2 neon-glow">
             Qaseeb Ahmad
           </h1>
           <p className="text-lg md:text-2xl text-center text-muted-foreground font-medium mt-4 mb-9 animate-fade-in">
-            <span className="inline-block bg-black/30 rounded px-2 py-1 font-mono tracking-tighter shadow-lg">
+            <span className="inline-block bg-black/40 rounded px-3 py-1 font-mono tracking-tighter shadow-lg">
               Software Engineer &nbsp;·&nbsp; Web Designer &nbsp;·&nbsp; Animations Enthusiast
             </span>
           </p>
@@ -79,12 +92,30 @@ export default function Index() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, type: "spring", stiffness: 120, ease: easeBezier }}
           >
-            <a href="#work" className="px-5 py-2 rounded shadow bg-primary text-primary-foreground font-semibold hover:scale-105 transition-transform hover:shadow-lg ring-2 ring-transparent hover:ring-cyan-500/70 duration-150">
-              View My Work
-            </a>
-            <a href="#contact" className="px-5 py-2 rounded border border-accent text-accent-foreground bg-accent hover:bg-background/70 hover:scale-105 transition">
-              Contact Me
-            </a>
+            <Button
+              asChild
+              className="px-6 py-3 text-lg font-bold rounded-xl shadow-xl bg-gradient-to-r from-blue-700 via-fuchsia-800 to-cyan-700
+                hover:scale-105 hover:shadow-fuchsia-400/[0.2] hover:ring-2 hover:ring-cyan-400/70 focus-visible:ring-4
+                transition-all duration-200 animate-fade-in backdrop-blur group"
+            >
+              <a href="#work">
+                <span className="transition-colors group-hover:text-cyan-300">
+                  View My Work
+                </span>
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="px-6 py-3 text-lg font-bold rounded-xl border-fuchsia-700 text-fuchsia-200 bg-background/40 hover:bg-fuchsia-900/20 hover:scale-105 
+                hover:shadow-cyan-400/[0.18] focus-visible:ring-2 transition-all duration-200 animate-fade-in backdrop-blur group"
+            >
+              <a href="#contact">
+                <span className="transition-colors group-hover:text-cyan-400">
+                  Contact Me
+                </span>
+              </a>
+            </Button>
           </motion.div>
         </motion.div>
       </main>
@@ -101,9 +132,9 @@ export default function Index() {
             ease: easeBezier
           }}
         >
-          <ChevronDown className="w-8 h-8 text-muted-foreground/70 animate-pulse" strokeWidth={2.3} />
+          <ChevronDown className="w-8 h-8 text-cyan-300/60 animate-pulse" strokeWidth={2.3} />
         </motion.div>
-        <span className="mt-1 text-xs text-muted-foreground/60 tracking-wide animate-fade-in">Scroll</span>
+        <span className="mt-1 text-xs text-cyan-200/50 tracking-wide animate-fade-in">Scroll</span>
       </div>
     </div>
   );
