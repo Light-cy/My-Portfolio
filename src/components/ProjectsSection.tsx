@@ -100,14 +100,22 @@ const projects: Project[] = [
   {
     title: "Instagram Clone",
     tech: "Firebase",
-    description: "Basic Instagram-like app using Firebase for authentication and media storage.",
-    tags: ["Firebase", "Authentication", "Media Storage"],
+    description: "Basic Instagram-like app using Firebase for authentication and media storage. Project is still ongoing to implement more features.",
+    tags: ["Firebase", "Authentication", "Media Storage", "In Progress"],
     color: "pink",
     type: "app",
-    githubUrl: "https://github.com/username/instagram-clone",
+    githubUrl: "https://github.com/Light-cy/My-apps/tree/Project",
     images: [
-      "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+      "/lovable-uploads/0c65a61c-ead7-434e-a3b9-d4806c7a77fd.png",
+      "/lovable-uploads/15bf0521-0cad-4883-b3b9-2a93482ce9b5.png",
+      "/lovable-uploads/7bbe67e8-3ae5-43d9-a9fc-08cb2c49b07d.png",
+      "/lovable-uploads/b74a77e0-c6c4-40fe-847f-7eb0e875c5f5.png",
+      "/lovable-uploads/ef5dfe6f-d94c-4f0b-ad8d-d9dcaca7c4f5.png",
+      "/lovable-uploads/95e74639-ff1a-483e-9695-8335518094cb.png",
+      "/lovable-uploads/819a3ccd-683a-4011-a4b1-72af0cb69852.png",
+      "/lovable-uploads/00b9850b-bb24-4042-885b-bb90b61e9139.png",
+      "/lovable-uploads/d216898b-9c6e-460e-bb39-727a36543dd9.png",
+      "/lovable-uploads/fc2f93ee-abb0-4029-a002-eeaf22643bd0.png"
     ]
   }
 ];
