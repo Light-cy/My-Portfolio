@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 
 const skillCategories = [
@@ -10,7 +11,8 @@ const skillCategories = [
       { name: "JavaScript", color: "yellow" },
       { name: "HTML/CSS", color: "pink" },
       { name: "XML", color: "purple" }
-    ]
+    ],
+    headerColor: "cyan"
   },
   {
     title: "Tools & Platforms",
@@ -21,7 +23,8 @@ const skillCategories = [
       { name: "VSCode", color: "blue" },
       { name: "Android Studio", color: "green" },
       { name: "MySQL Workbench", color: "cyan" }
-    ]
+    ],
+    headerColor: "purple"
   },
   {
     title: "Core Areas",
@@ -32,7 +35,8 @@ const skillCategories = [
       { name: "Error Testing", color: "yellow" },
       { name: "UI/UX Design", color: "pink" },
       { name: "Performance Optimization", color: "teal" }
-    ]
+    ],
+    headerColor: "blue"
   },
   {
     title: "Soft Skills & Additional",
@@ -41,7 +45,8 @@ const skillCategories = [
       { name: "Communication", color: "green" },
       { name: "Affiliate Marketing", color: "pink" },
       { name: "Recruitment", color: "purple" }
-    ]
+    ],
+    headerColor: "pink"
   }
 ];
 
@@ -57,7 +62,7 @@ export default function SkillsSection() {
           viewport={{ once: true }}
           className="space-y-4"
         >
-          <h3 className="text-lg font-semibold text-gray-300 font-orbitron mb-3">
+          <h3 className={`text-lg font-semibold bg-gradient-to-r from-${category.headerColor}-300 to-${category.headerColor}-400 bg-clip-text text-transparent font-orbitron mb-3`}>
             {category.title}
           </h3>
           <div className="flex flex-wrap gap-3">

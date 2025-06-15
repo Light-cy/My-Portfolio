@@ -57,7 +57,7 @@ export default function ExperienceSection() {
               transition: { duration: 0.2 }
             }}
           />
-          <h3 className={`text-xl font-bold text-${exp.color}-300 mb-1`}>{exp.title}</h3>
+          <h3 className={`text-xl font-bold bg-gradient-to-r from-${exp.color}-300 to-${exp.color}-400 bg-clip-text text-transparent mb-1`}>{exp.title}</h3>
           <p className="text-white/80 font-semibold mb-1">{exp.company}</p>
           <p className="text-sm text-gray-400 mb-3">{exp.period}</p>
           <p className="text-gray-300">{exp.description}</p>
