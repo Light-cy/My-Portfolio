@@ -1,4 +1,5 @@
 
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ExternalLink, Smartphone } from "lucide-react";
@@ -74,8 +75,11 @@ const projects: Project[] = [
     type: "app",
     githubUrl: "https://github.com/Light-cy/CODSOFT/tree/codsoft_task2_daily_quotes",
     images: [
-      "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+      "/lovable-uploads/1936f69f-1cc9-4e78-b715-919e1381b661.png",
+      "/lovable-uploads/fbfdf14f-d33d-4ce8-90f8-ba98bb55c260.png",
+      "/lovable-uploads/63010ade-e23b-407e-905c-328af8000ad8.png",
+      "/lovable-uploads/4396b3e5-7368-4410-8128-1893bf485f9d.png",
+      "/lovable-uploads/19f7bf74-8362-467c-8ba1-104dcb2a5516.png"
     ]
   },
   {
@@ -184,3 +188,4 @@ export default function ProjectsSection() {
     </div>
   );
 }
+
