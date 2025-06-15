@@ -57,66 +57,32 @@ export default function SectionCard({ id, title, icon: Icon, color, children }: 
     <motion.section
       id={id}
       className="relative w-full rounded-3xl bg-black/40 backdrop-blur-xl border border-white/10 p-8 md:p-12 shadow-2xl"
-      initial={{ opacity: 0, y: 50, scale: 0.98 }}
-      whileInView={{ 
-        opacity: 1, 
-        y: 0, 
-        scale: 1,
-        transition: {
-          duration: 0.5,
-          ease: [0.16, 1, 0.3, 1]
-        }
-      }}
-      viewport={{ once: true, margin: "-60px" }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
       <motion.div
         className="flex items-center gap-4 mb-8"
-        initial={{ opacity: 0, x: -25 }}
-        whileInView={{ 
-          opacity: 1, 
-          x: 0,
-          transition: { 
-            delay: 0.15, 
-            duration: 0.4,
-            ease: [0.16, 1, 0.3, 1]
-          }
-        }}
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
         viewport={{ once: true }}
       >
         <motion.div
           className={`p-3 rounded-2xl bg-gradient-to-br ${currentColors.iconBg} border ${currentColors.iconBorder}`}
-          initial={{ scale: 0, rotate: -90 }}
-          whileInView={{ 
-            scale: 1, 
-            rotate: 0,
-            transition: { 
-              delay: 0.2, 
-              duration: 0.4,
-              ease: [0.16, 1, 0.3, 1]
-            }
-          }}
           whileHover={{ 
-            rotate: [0, -6, 6, 0],
-            scale: 1.08,
-            transition: { duration: 0.2 }
+            rotate: [0, -5, 5, 0],
+            scale: 1.05,
+            transition: { duration: 0.15 }
           }}
         >
           <Icon className={`w-8 h-8 ${currentColors.iconText}`} />
         </motion.div>
         <motion.h2 
           className={`text-4xl md:text-5xl font-black tracking-tight font-orbitron bg-gradient-to-r ${currentColors.titleText} bg-clip-text text-transparent`}
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ 
-            opacity: 1, 
-            y: 0,
-            transition: { 
-              delay: 0.25, 
-              duration: 0.4,
-              ease: [0.16, 1, 0.3, 1]
-            }
-          }}
           whileHover={{ 
-            x: 6,
+            x: 5,
             transition: { duration: 0.15 }
           }}
         >
@@ -126,15 +92,8 @@ export default function SectionCard({ id, title, icon: Icon, color, children }: 
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ 
-          opacity: 1, 
-          y: 0,
-          transition: { 
-            delay: 0.3, 
-            duration: 0.4,
-            ease: [0.16, 1, 0.3, 1]
-          }
-        }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
         viewport={{ once: true }}
       >
         {children}

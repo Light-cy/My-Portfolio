@@ -8,7 +8,6 @@ export interface Project {
   githubUrl: string;
   images?: string[];
   features?: string[];
-  liveUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -51,16 +50,6 @@ export const projects: Project[] = [
       "Includes animated loading and color-coded text for better UX 🎨",
       "Clears screen and waits with messages using system(\"cls\") and Sleep() ⏱️"
     ]
-  },
-  {
-    title: "Flipkart Clone",
-    tech: "HTML/CSS",
-    description: "Static e-commerce UI clone with responsive design.",
-    tags: ["HTML/CSS", "UI", "Responsive"],
-    color: "blue",
-    type: "web",
-    liveUrl: "https://flipcartclonesites.netlify.app/",
-    githubUrl: "https://github.com/username/flipkart-clone"
   },
   {
     title: "Quiz App",
