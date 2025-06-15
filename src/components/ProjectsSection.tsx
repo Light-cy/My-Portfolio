@@ -29,6 +29,27 @@ const projects = [
     description: "Mobile quiz app storing questions and tracking scores using SQLite.",
     tags: ["Android", "SQLite", "Quiz"],
     color: "green"
+  },
+  {
+    title: "Daily Quotes App",
+    tech: "Android + API",
+    description: "Android app showing daily motivational quotes via API integration.",
+    tags: ["Android", "API", "Motivational"],
+    color: "orange"
+  },
+  {
+    title: "Alarm Clock App",
+    tech: "Android",
+    description: "Alarm app with alert box; stops either manually or after 60 seconds.",
+    tags: ["Android", "Alerts", "Timer"],
+    color: "red"
+  },
+  {
+    title: "Instagram Clone",
+    tech: "Firebase",
+    description: "Basic Instagram-like app using Firebase for authentication and media storage.",
+    tags: ["Firebase", "Authentication", "Media Storage"],
+    color: "pink"
   }
 ];
 
@@ -44,7 +65,7 @@ export default function ProjectsSection() {
           whileHover={{ 
             y: -8,
             rotate: -1,
-            boxShadow: `0 20px 40px rgba(${project.color === 'cyan' ? '6, 182, 212' : project.color === 'purple' ? '147, 51, 234' : project.color === 'blue' ? '59, 130, 246' : '34, 197, 94'}, 0.2)`,
+            boxShadow: `0 20px 40px rgba(${project.color === 'cyan' ? '6, 182, 212' : project.color === 'purple' ? '147, 51, 234' : project.color === 'blue' ? '59, 130, 246' : project.color === 'green' ? '34, 197, 94' : project.color === 'orange' ? '249, 115, 22' : project.color === 'red' ? '239, 68, 68' : '236, 72, 153'}, 0.2)`,
             transition: { duration: 0.3, ease: "easeOut" }
           }}
           transition={{ delay: index * 0.05, duration: 0.3 }}
