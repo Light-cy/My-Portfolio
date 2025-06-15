@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 interface SectionCardProps {
@@ -42,7 +41,7 @@ export default function SectionCard({
           transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
         >
           <motion.h2 
-            className={`flex items-center gap-4 text-3xl md:text-4xl font-black mb-6 tracking-tight text-${color}-300 uppercase font-orbitron`}
+            className={`flex items-center gap-4 text-2xl sm:text-3xl md:text-4xl font-black mb-6 tracking-tight text-${color}-300 uppercase font-orbitron`}
             whileHover={{ 
               x: 3,
               transition: { duration: 0.2 }

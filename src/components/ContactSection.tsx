@@ -25,7 +25,7 @@ export default function ContactSection() {
             href={contact.href}
             target={contact.href.startsWith('http') ? '_blank' : undefined}
             rel={contact.href.startsWith('http') ? 'noopener' : undefined}
-            className="text-white hover:text-orange-300 transition-colors underline decoration-orange-500/50 hover:decoration-orange-300"
+            className="text-white hover:text-orange-300 transition-colors underline decoration-orange-500/50 hover:decoration-orange-300 min-w-0 break-all"
           >
             {contact.value}
           </a>
