@@ -38,29 +38,87 @@ export default function ExperienceSection() {
       {experiences.map((exp, index) => (
         <motion.div
           key={index}
-          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${exp.color}-500/8 to-transparent border border-${exp.color}-500/20 hover:border-${exp.color}-500/40 transition-all duration-150 cursor-pointer`}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          whileHover={{ 
-            x: 8,
-            rotate: 0.5,
-            boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
-            transition: { duration: 0.15 }
+          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${exp.color}-500/8 to-transparent border border-${exp.color}-500/20 hover:border-${exp.color}-500/40 transition-all duration-300 cursor-pointer`}
+          initial={{ opacity: 0, x: -60, scale: 0.95 }}
+          whileInView={{ 
+            opacity: 1, 
+            x: 0, 
+            scale: 1,
+            transition: {
+              delay: index * 0.2,
+              duration: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }
           }}
-          transition={{ delay: index * 0.05, duration: 0.3 }}
-          viewport={{ once: true }}
+          whileHover={{ 
+            x: 12,
+            rotate: 1,
+            scale: 1.02,
+            boxShadow: "0 15px 40px rgba(0, 0, 0, 0.4)",
+            transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
+          }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <motion.div 
             className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-${exp.color}-400 to-${exp.color}-600 rounded-r`}
+            initial={{ height: 0 }}
+            whileInView={{ 
+              height: "100%",
+              transition: { delay: index * 0.2 + 0.3, duration: 0.6 }
+            }}
             whileHover={{ 
-              width: 4,
-              transition: { duration: 0.15 }
+              width: 6,
+              transition: { duration: 0.3 }
             }}
           />
-          <h3 className={`text-xl font-bold bg-gradient-to-r from-${exp.color}-300 to-${exp.color}-400 bg-clip-text text-transparent mb-1`}>{exp.title}</h3>
-          <p className="text-white/80 font-semibold mb-1">{exp.company}</p>
-          <p className="text-sm text-gray-400 mb-3">{exp.period}</p>
-          <p className="text-gray-300">{exp.description}</p>
+          
+          <motion.h3 
+            className={`text-xl font-bold bg-gradient-to-r from-${exp.color}-300 to-${exp.color}-400 bg-clip-text text-transparent mb-1`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0,
+              transition: { delay: index * 0.2 + 0.2, duration: 0.6 }
+            }}
+          >
+            {exp.title}
+          </motion.h3>
+          
+          <motion.p 
+            className="text-white/80 font-semibold mb-1"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0,
+              transition: { delay: index * 0.2 + 0.3, duration: 0.6 }
+            }}
+          >
+            {exp.company}
+          </motion.p>
+          
+          <motion.p 
+            className="text-sm text-gray-400 mb-3"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0,
+              transition: { delay: index * 0.2 + 0.4, duration: 0.6 }
+            }}
+          >
+            {exp.period}
+          </motion.p>
+          
+          <motion.p 
+            className="text-gray-300"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0,
+              transition: { delay: index * 0.2 + 0.5, duration: 0.6 }
+            }}
+          >
+            {exp.description}
+          </motion.p>
         </motion.div>
       ))}
     </div>
