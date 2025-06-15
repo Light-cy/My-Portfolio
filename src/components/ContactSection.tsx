@@ -182,7 +182,7 @@ export default function ContactSection() {
         <p className="text-gray-300 font-space">
           I'm always excited to work on new projects and collaborate with fellow developers.
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 }
