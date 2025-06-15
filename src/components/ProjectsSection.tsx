@@ -1,5 +1,3 @@
-
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ExternalLink, Smartphone } from "lucide-react";
@@ -89,10 +87,14 @@ const projects: Project[] = [
     tags: ["Android", "Alerts", "Timer"],
     color: "red",
     type: "app",
-    githubUrl: "https://github.com/username/alarm-app",
+    githubUrl: "https://github.com/Light-cy/CODSOFT/tree/Alarm_clock_app_codsoft_task3",
     images: [
-      "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+      "/lovable-uploads/d14554f6-616f-4813-bd21-9f0f64f25513.png",
+      "/lovable-uploads/874d18cd-0b9a-4654-85fa-3807ee5f8f05.png",
+      "/lovable-uploads/a22f2b8f-ab51-47b5-8f3d-9a18b7194c21.png",
+      "/lovable-uploads/61ee7dc0-f8fb-4c02-beca-0e030200f602.png",
+      "/lovable-uploads/5468c2dc-763b-4136-aff9-fbb8d134562d.png",
+      "/lovable-uploads/4a335bc2-7276-4924-ba8b-1e1fb662ff6c.png"
     ]
   },
   {
@@ -188,4 +190,3 @@ export default function ProjectsSection() {
     </div>
   );
 }
-
