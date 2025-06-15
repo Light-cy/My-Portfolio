@@ -132,17 +132,37 @@ export default function Index() {
       {/* Resume Info Sections */}
       <div className="relative z-30 flex-1 w-full flex flex-col items-center pb-36">
         <SectionCard title="Profile">
-          Detail-oriented and innovative Software Engineer passionate about building beautiful, user-centric products. Experience across frontend, backend, full stack web development, with strong skills in UI/UX design, animation, and performance optimization.
+          Enthusiastic Computer Science student and developer passionate about innovative software solutions. Experienced in C++ and other programming languages, with strong problem-solving and debugging skills. Seeking an internship to apply technical expertise and gain industry experience.
         </SectionCard>
         <SectionCard title="Experience">
-          <ul className="list-disc list-inside space-y-1">
+          <ul className="list-disc list-inside space-y-2">
             <li>
-              <strong>Frontend Developer</strong> · XYZ Company, 2023–Present<br />
-              Built and maintained complex web apps with React/TypeScript. Improved page load time by 35% using code splitting and performance audits. Collaborated closely with design teams for pixel-perfect UIs.
+              <strong>Assistant Professor (Intern)</strong> – University of Central Punjab<br />
+              <span className="text-xs text-muted-foreground">Nov 2024 – Present</span><br />
+              Assisted faculty in academic and administrative tasks.<br />
+              Supported students and helped with course material.
             </li>
             <li>
-              <strong>Web Animation Specialist</strong> · ABC Studio, 2022–2023<br />
-              Created interactive SVG/CSS/webGL animations for top client websites and product launches. Conducted animation workshops for internal teams.
+              <strong>Private Tutor</strong> – Self-employed<br />
+              <span className="text-xs text-muted-foreground">Jun 2024 – Present</span><br />
+              Provided personalized tutoring tailored to individual learning styles.
+            </li>
+            <li>
+              <strong>Employee</strong> – Daim Pharmacy<br />
+              <span className="text-xs text-muted-foreground">Apr 2020 – Aug 2020</span><br />
+              Managed inventory and assisted customers in a retail pharmacy setting.
+            </li>
+            <li>
+              <strong>Front-End Intern</strong> – Ireg-IT<br />
+              <span className="text-xs text-muted-foreground">Oct 2024 – Dec 2024</span><br />
+              Tested and reviewed UI/UX of software applications.<br />
+              Identified bugs and suggested design improvements.
+            </li>
+            <li>
+              <strong>Affiliate Marketer</strong> – Nimal Solutions<br />
+              <span className="text-xs text-muted-foreground">Apr 2025 – Present</span><br />
+              Sourced candidates via LinkedIn.<br />
+              Managed outreach and communication logs.
             </li>
           </ul>
         </SectionCard>
@@ -169,20 +189,50 @@ export default function Index() {
           </div>
         </SectionCard>
         <SectionCard title="Projects">
-          <ul className="list-disc list-inside space-y-1">
-            <li>
-              <strong>Animated Portfolio Website</strong><br />
-              Fully responsive React/TypeScript site with advanced SVG and Framer Motion animations. Featured on web design inspiration galleries.
-            </li>
-            <li>
-              <strong>Performance Dashboard</strong><br />
-              Data-driven dashboard for monitoring web performance using Recharts, React Query, and Tailwind.
-            </li>
-            <li>
-              <strong>UI Component Library</strong><br />
-              Designed a custom, accessible UI component library used in multiple client-facing projects.
-            </li>
-          </ul>
+          <div className="flex flex-col gap-5">
+            <div className="p-4 rounded-xl bg-cyan-950/40 border border-cyan-800/40">
+              <h3 className="text-lg font-bold text-cyan-200 mb-1">ATM Machine System (C++)</h3>
+              <p className="text-base text-foreground/90">
+                Console-based ATM simulation with file handling, user accounts, and transaction features.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-violet-950/35 border border-violet-700/30">
+              <h3 className="text-lg font-bold text-violet-200 mb-1">Rock-Paper-Scissors Game (HTML/CSS/JS)</h3>
+              <p className="text-base text-foreground/90">
+                Interactive browser game with local storage and dynamic UI.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-fuchsia-950/40 border border-fuchsia-700/30">
+              <h3 className="text-lg font-bold text-fuchsia-200 mb-1">Flipkart Clone (HTML/CSS)</h3>
+              <p className="text-base text-foreground/90">
+                Static e-commerce UI clone with responsive design.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-orange-900/25 border border-orange-700/30">
+              <h3 className="text-lg font-bold text-yellow-200 mb-1">Quiz App (Android + SQLite)</h3>
+              <p className="text-base text-foreground/90">
+                Mobile quiz app storing questions and tracking scores using SQLite.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-sky-900/30 border border-sky-700/30">
+              <h3 className="text-lg font-bold text-sky-200 mb-1">Daily Quotes App (API-based)</h3>
+              <p className="text-base text-foreground/90">
+                Android app showing daily motivational quotes via API.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-green-950/30 border border-green-700/30">
+              <h3 className="text-lg font-bold text-green-200 mb-1">Alarm Clock App (Android)</h3>
+              <p className="text-base text-foreground/90">
+                Alarm app with alert box; stops either manually or after 60 seconds.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-pink-950/30 border border-pink-700/30">
+              <h3 className="text-lg font-bold text-pink-200 mb-1">Instagram Clone (Firebase)</h3>
+              <p className="text-base text-foreground/90">
+                Basic Instagram-like app using Firebase for authentication and media storage.
+              </p>
+            </div>
+          </div>
         </SectionCard>
         <SectionCard title="Contact">
           <div>
