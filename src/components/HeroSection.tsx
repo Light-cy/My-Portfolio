@@ -18,7 +18,7 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center gap-2 text-sm uppercase tracking-widest bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-bold mb-4">
+          <span className="inline-flex items-center gap-2 text-sm uppercase tracking-widest bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-bold mb-4 font-space">
             <Sparkles className="w-4 h-4 text-cyan-400" />
             Welcome to my digital universe
             <Sparkles className="w-4 h-4 text-purple-400" />
@@ -26,7 +26,7 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.h1
-          className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6"
+          className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6 font-orbitron"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7, ease: "backOut" }}
@@ -61,7 +61,7 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl text-gray-300 font-medium mb-10 max-w-2xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl text-gray-300 font-medium mb-10 max-w-2xl mx-auto leading-relaxed font-space"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
@@ -80,7 +80,7 @@ export default function HeroSection() {
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ duration: 0.15 }}>
             <Button
               asChild
-              className="relative px-10 py-4 text-lg font-black rounded-2xl overflow-hidden group"
+              className="relative px-10 py-4 text-lg font-black rounded-2xl overflow-hidden group font-space"
             >
               <a href="#projects">
                 <motion.div
@@ -106,7 +106,7 @@ export default function HeroSection() {
             <Button
               asChild
               variant="outline"
-              className="px-10 py-4 text-lg font-black rounded-2xl border-2 border-white/20 bg-black/40 backdrop-blur text-white hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-200"
+              className="px-10 py-4 text-lg font-black rounded-2xl border-2 border-white/20 bg-black/40 backdrop-blur text-white hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-200 font-space"
             >
               <a href="#contact">
                 <span className="flex items-center gap-2">

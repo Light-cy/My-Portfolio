@@ -51,7 +51,7 @@ export default function SectionCard({
           viewport={{ once: true }}
         >
           <motion.h2 
-            className={`flex items-center gap-4 text-3xl md:text-4xl font-black mb-6 tracking-tight text-${color}-300 uppercase`}
+            className={`flex items-center gap-4 text-3xl md:text-4xl font-black mb-6 tracking-tight text-${color}-300 uppercase font-orbitron`}
             whileHover={{ 
               scale: 1.02,
               transition: { duration: 0.15 }
@@ -69,7 +69,7 @@ export default function SectionCard({
             {title}
           </motion.h2>
           <motion.div 
-            className="text-lg text-gray-200 leading-relaxed"
+            className="text-lg text-gray-200 leading-relaxed font-space"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.3 }}

@@ -24,7 +24,7 @@ export default function FloatingNav() {
             href={item.href}
             className={`group relative flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl transition-all duration-200 
               hover:bg-${item.color}-500/20 hover:shadow-lg hover:shadow-${item.color}-500/25 hover:scale-105 
-              text-${item.color}-300 hover:text-${item.color}-200`}
+              text-${item.color}-300 hover:text-${item.color}-200 font-space`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -20 }}
