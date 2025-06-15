@@ -1,4 +1,3 @@
-
 // HomePage – Futuristic, Attractive Hero Section
 
 import AnimatedParticlesBg from "@/components/AnimatedParticlesBg";
@@ -33,7 +32,12 @@ function SvgBlobs() {
 
 const heroVariants = {
   hidden: { opacity: 0, y: 60, scale: 0.98 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.95, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.95, ease: [0.42, 0, 0.58, 1] }
+  },
 };
 
 const glowStyle = "bg-gradient-to-r from-blue-600/80 via-fuchsia-500/60 to-cyan-300/80 blur-lg opacity-60";
@@ -59,7 +63,7 @@ export default function Index() {
             Hi, I&apos;m
           </span>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-center bg-gradient-to-br from-cyan-300/90 via-fuchsia-500/80 to-blue-500/90 bg-clip-text text-transparent drop-shadow-lg animate-scale-in mb-2">
-            YOUR NAME
+            Qaseeb Ahmad
           </h1>
           <p className="text-lg md:text-2xl text-center text-muted-foreground font-medium mt-4 mb-9 animate-fade-in">
             <span className="inline-block bg-black/30 rounded px-2 py-1 font-mono tracking-tighter shadow-lg">
@@ -71,7 +75,7 @@ export default function Index() {
             className="flex gap-4 mt-3"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, type: "spring", stiffness: 120 }}
+            transition={{ delay: 0.7, type: "spring", stiffness: 120, ease: [0.42, 0, 0.58, 1] }}
           >
             <a href="#work" className="px-5 py-2 rounded shadow bg-primary text-primary-foreground font-semibold hover:scale-105 transition-transform hover:shadow-lg ring-2 ring-transparent hover:ring-cyan-500/70 duration-150">
               View My Work
@@ -92,7 +96,7 @@ export default function Index() {
           transition={{
             repeat: Infinity,
             duration: 1.65,
-            ease: "easeInOut"
+            ease: [0.42, 0, 0.58, 1]
           }}
         >
           <ChevronDown className="w-8 h-8 text-muted-foreground/70 animate-pulse" strokeWidth={2.3} />
