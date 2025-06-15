@@ -1,3 +1,4 @@
+
 export interface Project {
   title: string;
   tech: string;
@@ -6,6 +7,7 @@ export interface Project {
   color: string;
   type: "web" | "app";
   githubUrl: string;
+  liveUrl?: string;
   images?: string[];
   features?: string[];
 }
@@ -50,6 +52,16 @@ export const projects: Project[] = [
       "Includes animated loading and color-coded text for better UX 🎨",
       "Clears screen and waits with messages using system(\"cls\") and Sleep() ⏱️"
     ]
+  },
+  {
+    title: "Flipkart Clone",
+    tech: "HTML/CSS",
+    description: "Static e-commerce UI clone with responsive design.",
+    tags: ["HTML/CSS", "UI", "Responsive"],
+    color: "blue",
+    type: "web",
+    liveUrl: "https://flipcartclonesites.netlify.app/",
+    githubUrl: "https://github.com/Light-cy/flipkart-clone"
   },
   {
     title: "Quiz App",
