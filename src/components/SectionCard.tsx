@@ -74,7 +74,7 @@ export default function SectionCard({ id, title, icon: Icon, color, children }: 
           whileHover={{ 
             rotate: [0, -5, 5, 0],
             scale: 1.05,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.15 }
           }}
         >
           <Icon className={`w-8 h-8 ${currentColors.iconText}`} />
@@ -83,7 +83,7 @@ export default function SectionCard({ id, title, icon: Icon, color, children }: 
           className={`text-4xl md:text-5xl font-black tracking-tight font-orbitron bg-gradient-to-r ${currentColors.titleText} bg-clip-text text-transparent`}
           whileHover={{ 
             x: 5,
-            transition: { duration: 0.2 }
+            transition: { duration: 0.15 }
           }}
         >
           {title}

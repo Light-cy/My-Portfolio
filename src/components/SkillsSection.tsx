@@ -76,7 +76,7 @@ export default function SkillsSection() {
                   rotate: [-1, 1, -1, 0],
                   x: 2,
                   boxShadow: `0 8px 25px rgba(${skill.color === 'cyan' ? '6, 182, 212' : skill.color === 'blue' ? '59, 130, 246' : skill.color === 'purple' ? '147, 51, 234' : skill.color === 'green' ? '34, 197, 94' : skill.color === 'pink' ? '236, 72, 153' : skill.color === 'orange' ? '249, 115, 22' : skill.color === 'yellow' ? '234, 179, 8' : skill.color === 'teal' ? '20, 184, 166' : skill.color === 'red' ? '239, 68, 68' : '99, 102, 241'}, 0.3)`,
-                  transition: { duration: 0.3, ease: "easeOut" }
+                  transition: { duration: 0.15, ease: "easeOut" }
                 }}
                 transition={{ delay: (categoryIndex * 0.1) + (index * 0.03), duration: 0.25 }}
                 viewport={{ once: true }}

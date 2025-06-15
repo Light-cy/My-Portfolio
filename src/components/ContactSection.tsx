@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, ExternalLink, Copy, CheckCircle } from "lucide-react";
 import { useState } from "react";
@@ -64,20 +65,20 @@ export default function ContactSection() {
           return (
             <motion.div
               key={index}
-              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-${contact.color}-500/10 via-black/50 to-black/80 backdrop-blur border border-${contact.color}-500/20 hover:border-${contact.color}-400/40 transition-all duration-300`}
+              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-${contact.color}-500/10 via-black/50 to-black/80 backdrop-blur border border-${contact.color}-500/20 hover:border-${contact.color}-400/40 transition-all duration-150`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ 
                 scale: 1.02,
                 rotateY: 5,
-                transition: { duration: 0.2 }
+                transition: { duration: 0.15 }
               }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
             >
               {/* Animated background gradient */}
               <motion.div
-                className={`absolute inset-0 bg-gradient-to-br from-${contact.color}-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                className={`absolute inset-0 bg-gradient-to-br from-${contact.color}-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150`}
                 animate={{
                   background: [
                     `linear-gradient(45deg, rgb(var(--${contact.color}-500) / 0.1), transparent)`,
@@ -92,17 +93,17 @@ export default function ContactSection() {
                 {/* Header with icon and label */}
                 <div className="flex items-center gap-3 mb-4">
                   <motion.div
-                    className={`p-3 rounded-xl bg-${contact.color}-500/20 border border-${contact.color}-500/30 group-hover:border-${contact.color}-400/50 transition-colors duration-200`}
+                    className={`p-3 rounded-xl bg-${contact.color}-500/20 border border-${contact.color}-500/30 group-hover:border-${contact.color}-400/50 transition-colors duration-150`}
                     whileHover={{ 
                       rotate: [0, -10, 10, 0],
                       scale: 1.1,
-                      transition: { duration: 0.4 }
+                      transition: { duration: 0.2 }
                     }}
                   >
-                    <IconComponent className={`w-5 h-5 text-${contact.color}-300 group-hover:text-${contact.color}-200 transition-colors duration-200`} />
+                    <IconComponent className={`w-5 h-5 text-${contact.color}-300 group-hover:text-${contact.color}-200 transition-colors duration-150`} />
                   </motion.div>
                   <div>
-                    <h3 className={`font-bold text-lg text-${contact.color}-300 group-hover:text-${contact.color}-200 transition-colors duration-200 font-orbitron`}>
+                    <h3 className={`font-bold text-lg text-${contact.color}-300 group-hover:text-${contact.color}-200 transition-colors duration-150 font-orbitron`}>
                       {contact.label}
                     </h3>
                     <p className="text-sm text-gray-400 font-space">
@@ -125,7 +126,7 @@ export default function ContactSection() {
                       href={contact.href}
                       target={isExternal ? '_blank' : undefined}
                       rel={isExternal ? 'noopener' : undefined}
-                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-${contact.color}-500/20 hover:bg-${contact.color}-500/30 border border-${contact.color}-500/30 hover:border-${contact.color}-400/50 text-${contact.color}-200 hover:text-${contact.color}-100 transition-all duration-200 text-sm font-medium font-space`}
+                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-${contact.color}-500/20 hover:bg-${contact.color}-500/30 border border-${contact.color}-500/30 hover:border-${contact.color}-400/50 text-${contact.color}-200 hover:text-${contact.color}-100 transition-all duration-150 text-sm font-medium font-space`}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -135,7 +136,7 @@ export default function ContactSection() {
 
                     <motion.button
                       onClick={() => handleCopy(contact.value, index)}
-                      className={`px-3 py-2 rounded-lg bg-gray-700/50 hover:bg-gray-600/50 border border-gray-600/50 hover:border-gray-500/50 text-gray-300 hover:text-white transition-all duration-200`}
+                      className={`px-3 py-2 rounded-lg bg-gray-700/50 hover:bg-gray-600/50 border border-gray-600/50 hover:border-gray-500/50 text-gray-300 hover:text-white transition-all duration-150`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       title="Copy to clipboard"
@@ -151,7 +152,7 @@ export default function ContactSection() {
 
                 {/* Subtle border glow effect */}
                 <motion.div
-                  className={`absolute inset-0 rounded-2xl border border-${contact.color}-400/0 group-hover:border-${contact.color}-400/30 transition-all duration-300 pointer-events-none`}
+                  className={`absolute inset-0 rounded-2xl border border-${contact.color}-400/0 group-hover:border-${contact.color}-400/30 transition-all duration-150 pointer-events-none`}
                   animate={{
                     boxShadow: [
                       `0 0 0 0px rgb(var(--${contact.color}-500) / 0)`,
@@ -181,7 +182,7 @@ export default function ContactSection() {
         <p className="text-gray-300 font-space">
           I'm always excited to work on new projects and collaborate with fellow developers.
         </p>
-      </motion.div>
+      </div>
     </div>
   );
 }
