@@ -10,7 +10,7 @@ export default function FloatingNav() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
     >
-      <div className="mx-auto max-w-2xl flex justify-center gap-2 p-3 bg-black/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 pointer-events-auto">
+      <div className="mx-auto max-w-full flex justify-center gap-1 sm:gap-2 p-2 sm:p-3 bg-black/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 pointer-events-auto overflow-hidden">
         {[
           { href: "#profile", label: "Profile", icon: User, color: "cyan" },
           { href: "#experience", label: "Experience", icon: Briefcase, color: "purple" },
@@ -22,12 +22,11 @@ export default function FloatingNav() {
           <motion.a
             key={item.href}
             href={item.href}
-            className={`group relative flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl transition-all duration-300 
+            className={`group relative flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-bold px-2 sm:px-4 py-2 rounded-xl transition-all duration-300 
               hover:bg-${item.color}-500/20 hover:shadow-lg hover:shadow-${item.color}-500/25 
-              text-${item.color}-300 hover:text-${item.color}-200 font-space`}
+              text-${item.color}-300 hover:text-${item.color}-200 font-space flex-shrink-0 min-w-0`}
             whileHover={{ 
               y: -2,
-              rotate: 2,
               transition: { duration: 0.2, ease: "easeOut" }
             }}
             whileTap={{ scale: 0.95 }}
@@ -40,10 +39,11 @@ export default function FloatingNav() {
                 rotate: 15,
                 transition: { duration: 0.2 }
               }}
+              className="flex-shrink-0"
             >
-              <item.icon className="w-4 h-4" />
+              <item.icon className="w-3 h-3 sm:w-4 sm:h-4" />
             </motion.div>
-            <span className="hidden sm:block">{item.label}</span>
+            <span className="hidden sm:block truncate">{item.label}</span>
             <motion.div
               className={`absolute inset-0 rounded-xl bg-gradient-to-r from-${item.color}-500/0 to-${item.color}-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
               layoutId={`nav-${item.href}`}
