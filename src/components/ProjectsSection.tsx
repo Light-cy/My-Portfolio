@@ -38,17 +38,17 @@ export default function ProjectsSection() {
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${project.color}-500/10 to-transparent border border-${project.color}-500/20 hover:border-${project.color}-500/40 backdrop-blur overflow-hidden`}
-          initial={{ opacity: 0, y: 30 }}
+          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${project.color}-500/8 to-transparent border border-${project.color}-500/20 hover:border-${project.color}-500/40 backdrop-blur-sm overflow-hidden`}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ scale: 1.05, y: -10 }}
-          transition={{ delay: index * 0.05, duration: 0.4 }}
+          whileHover={{ 
+            scale: 1.02, 
+            y: -5,
+            transition: { duration: 0.2 }
+          }}
+          transition={{ delay: index * 0.05, duration: 0.3 }}
           viewport={{ once: true }}
         >
-          <motion.div
-            className={`absolute inset-0 bg-gradient-to-br from-${project.color}-500/20 to-transparent opacity-0 group-hover:opacity-100`}
-            transition={{ duration: 0.2 }}
-          />
           <div className="relative z-10">
             <h3 className={`text-xl font-bold text-${project.color}-300 mb-2`}>
               {project.title} <span className="text-sm text-gray-400">({project.tech})</span>

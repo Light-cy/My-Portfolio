@@ -19,11 +19,15 @@ export default function SkillsSection() {
       {skills.map((skill, index) => (
         <motion.span
           key={skill.name}
-          className={`px-6 py-3 rounded-2xl bg-gradient-to-r from-${skill.color}-500/20 to-${skill.color}-600/20 border border-${skill.color}-500/30 text-${skill.color}-200 font-bold backdrop-blur`}
-          initial={{ opacity: 0, scale: 0.8 }}
+          className={`px-6 py-3 rounded-2xl bg-gradient-to-r from-${skill.color}-500/15 to-${skill.color}-600/15 border border-${skill.color}-500/30 text-${skill.color}-200 font-bold backdrop-blur-sm`}
+          initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.1, y: -5 }}
-          transition={{ delay: index * 0.05, duration: 0.3 }}
+          whileHover={{ 
+            scale: 1.05, 
+            y: -3,
+            transition: { duration: 0.15 }
+          }}
+          transition={{ delay: index * 0.05, duration: 0.25 }}
           viewport={{ once: true }}
         >
           {skill.name}

@@ -38,11 +38,15 @@ export default function ExperienceSection() {
       {experiences.map((exp, index) => (
         <motion.div
           key={index}
-          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${exp.color}-500/10 to-transparent border border-${exp.color}-500/20 hover:border-${exp.color}-500/40 transition-all duration-200`}
-          initial={{ opacity: 0, x: -30 }}
+          className={`group relative p-6 rounded-2xl bg-gradient-to-br from-${exp.color}-500/8 to-transparent border border-${exp.color}-500/20 hover:border-${exp.color}-500/40 transition-all duration-200`}
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          whileHover={{ scale: 1.02, x: 10 }}
-          transition={{ delay: index * 0.05, duration: 0.4 }}
+          whileHover={{ 
+            scale: 1.01, 
+            x: 5,
+            transition: { duration: 0.2 }
+          }}
+          transition={{ delay: index * 0.05, duration: 0.3 }}
           viewport={{ once: true }}
         >
           <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-${exp.color}-400 to-${exp.color}-600 rounded-r`} />
