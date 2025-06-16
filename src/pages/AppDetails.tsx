@@ -9,8 +9,12 @@ import ProjectInfo from "@/components/ProjectInfo";
 export default function AppDetails() {
   const [searchParams] = useSearchParams();
   const projectTitle = searchParams.get('project');
-  
+
+  console.log("Project title from search param:", projectTitle);
+
   const project = projects.find(p => p.title === projectTitle);
+
+  console.log("Found project:", project);
 
   useEffect(() => {
     if (project) {
