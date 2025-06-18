@@ -1,4 +1,3 @@
-
 import AnimatedParticlesBg from "@/components/AnimatedParticlesBg";
 import FloatingElements from "@/components/FloatingElements";
 import EnhancedBackground from "@/components/EnhancedBackground";
@@ -11,26 +10,16 @@ import EducationSection from "@/components/EducationSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
+import ThemeToggle from "@/components/ThemeToggle";
 import { User, Briefcase, GraduationCap, Code, FolderOpen, Mail } from "lucide-react";
-import { useEffect } from "react";
-
-function useForceDarkTheme() {
-  useEffect(() => {
-    document.documentElement.classList.add('dark');
-    return () => {
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
-}
 
 export default function Index() {
-  useForceDarkTheme();
-
   return (
-    <div className="relative min-h-screen bg-black text-white">
+    <div className="relative min-h-screen bg-background text-foreground transition-colors duration-500">
       <AnimatedParticlesBg />
       <FloatingElements />
       <EnhancedBackground />
+      <ThemeToggle />
 
       <HeroSection />
 
