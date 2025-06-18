@@ -19,12 +19,10 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center gap-2 text-sm uppercase tracking-widest bg-gradient-to-r bg-clip-text text-transparent font-bold mb-4 font-space
-            dark:from-cyan-400 dark:to-purple-400
-            from-cyan-600 to-purple-700">
-            <Sparkles className="w-4 h-4 dark:text-cyan-400 text-cyan-600" />
+          <span className="inline-flex items-center gap-2 text-sm uppercase tracking-widest bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-bold mb-4 font-space">
+            <Sparkles className="w-4 h-4 text-cyan-400" />
             Welcome to my digital universe
-            <Sparkles className="w-4 h-4 dark:text-purple-400 text-purple-600" />
+            <Sparkles className="w-4 h-4 text-purple-400" />
           </span>
         </motion.div>
 
@@ -40,9 +38,7 @@ export default function HeroSection() {
           transition={{ delay: 0.3, duration: 0.7, ease: "backOut" }}
         >
           <motion.span
-            className="inline-block bg-gradient-to-r bg-clip-text text-transparent
-              dark:from-cyan-300 dark:via-purple-400 dark:to-pink-400
-              from-cyan-600 via-purple-600 to-pink-600"
+            className="inline-block bg-gradient-to-r from-cyan-300 via-purple-400 to-pink-400 bg-clip-text text-transparent"
             animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           >
@@ -50,9 +46,7 @@ export default function HeroSection() {
           </motion.span>
           <br />
           <motion.span
-            className="inline-block bg-gradient-to-r bg-clip-text text-transparent
-              dark:from-pink-400 dark:via-purple-400 dark:to-cyan-300
-              from-pink-600 via-purple-600 to-cyan-600"
+            className="inline-block bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300 bg-clip-text text-transparent"
             animate={{ backgroundPosition: ["100% 50%", "0% 50%", "100% 50%"] }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           >
@@ -61,14 +55,12 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl font-medium mb-10 max-w-2xl mx-auto leading-relaxed font-space"
+          className="text-xl md:text-2xl text-gray-300 font-medium mb-10 max-w-2xl mx-auto leading-relaxed font-space"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
         >
-          <span className="backdrop-blur rounded-2xl px-6 py-4 border inline-block
-            dark:bg-black/50 dark:border-white/10 dark:text-gray-300
-            bg-white/60 border-slate-200/60 text-slate-700 shadow-lg">
+          <span className="bg-black/50 backdrop-blur rounded-2xl px-6 py-4 border border-white/10 inline-block">
             ✨ Software Engineer • Frontend Developer • Android Developer ✨
           </span>
         </motion.p>
@@ -125,9 +117,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.15 }}
           >
-            <Button asChild variant="outline" className="px-10 py-4 text-lg font-black rounded-2xl border-2 backdrop-blur transition-all duration-150 font-space
-              dark:border-white/20 dark:bg-black/40 dark:text-white dark:hover:bg-white/10 dark:hover:border-cyan-400/50
-              border-slate-300/60 bg-white/60 text-slate-700 hover:bg-white/80 hover:border-cyan-500/60 shadow-lg hover:shadow-xl">
+            <Button asChild variant="outline" className="px-10 py-4 text-lg font-black rounded-2xl border-2 border-white/20 bg-black/40 backdrop-blur text-white hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-150 font-space">
               <button onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById("contact");

@@ -1,4 +1,3 @@
-
 import AnimatedParticlesBg from "@/components/AnimatedParticlesBg";
 import FloatingElements from "@/components/FloatingElements";
 import EnhancedBackground from "@/components/EnhancedBackground";
@@ -16,9 +15,7 @@ import { User, Briefcase, GraduationCap, Code, FolderOpen, Mail } from "lucide-r
 
 export default function Index() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground transition-colors duration-500
-      dark:bg-background dark:text-foreground
-      bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-800">
+    <div className="relative min-h-screen bg-background text-foreground transition-colors duration-500">
       <AnimatedParticlesBg />
       <FloatingElements />
       <EnhancedBackground />
