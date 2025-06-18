@@ -5,14 +5,14 @@ const experiences = [
   {
     title: "Assistant Professor (Intern)",
     company: "University of Central Punjab",
-    period: "Nov 2024 – Present",
+    period: "Nov 2024 – Feb 2025",
     description: "Assisted faculty in academic and administrative tasks. Supported students and helped with course material.",
     color: "cyan"
   },
   {
     title: "Private Tutor",
     company: "Self-employed",
-    period: "Jun 2024 – Present",
+    period: "Jun 2024 – Apr 2025",
     description: "Provided personalized tutoring tailored to individual learning styles.",
     color: "purple"
   },
@@ -26,7 +26,7 @@ const experiences = [
   {
     title: "Affiliate Marketer",
     company: "Nimal Solutions",
-    period: "Apr 2025 – Present",
+    period: "Apr 2025 – May 2025",
     description: "Sourced candidates via LinkedIn. Managed outreach and communication logs.",
     color: "green"
   }

@@ -81,7 +81,13 @@ export default function HeroSection() {
             transition={{ duration: 0.15 }}
           >
             <Button asChild className="relative px-10 py-4 text-lg font-black rounded-2xl overflow-hidden group font-space">
-              <a href="#projects">
+              <button onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("projects");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}>
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500"
                   animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
@@ -98,7 +104,7 @@ export default function HeroSection() {
                   </motion.div>
                   View My Work
                 </span>
-              </a>
+              </button>
             </Button>
           </motion.div>
           
@@ -112,7 +118,13 @@ export default function HeroSection() {
             transition={{ duration: 0.15 }}
           >
             <Button asChild variant="outline" className="px-10 py-4 text-lg font-black rounded-2xl border-2 border-white/20 bg-black/40 backdrop-blur text-white hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-150 font-space">
-              <a href="#contact">
+              <button onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("contact");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}>
                 <span className="flex items-center gap-2">
                   <motion.div
                     whileHover={{
@@ -124,7 +136,7 @@ export default function HeroSection() {
                   </motion.div>
                   Let's Connect
                 </span>
-              </a>
+              </button>
             </Button>
           </motion.div>
         </motion.div>
