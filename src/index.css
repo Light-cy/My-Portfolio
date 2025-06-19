@@ -127,78 +127,78 @@
 @layer utilities {
   /* Text color overrides for light mode */
   :root .text-gray-300 {
-    @apply text-gray-700;
+    color: rgb(55 65 81); /* equivalent to text-gray-700 */
   }
 
   :root .text-gray-400 {
-    @apply text-gray-600;
+    color: rgb(75 85 99); /* equivalent to text-gray-600 */
   }
 
   :root .text-white\/80 {
-    @apply text-gray-800;
+    color: rgb(31 41 55); /* equivalent to text-gray-800 */
   }
 
   :root .text-white {
-    @apply text-gray-900;
+    color: rgb(17 24 39); /* equivalent to text-gray-900 */
   }
 
   /* Border improvements for light mode */
   :root .border-white\/10 {
-    @apply border-gray-300;
+    border-color: rgb(209 213 219); /* equivalent to border-gray-300 */
   }
 
   :root .border-white\/20 {
-    @apply border-gray-400;
+    border-color: rgb(156 163 175); /* equivalent to border-gray-400 */
   }
 
   /* Background improvements for light mode */
   :root .bg-black\/40 {
-    @apply bg-white/80;
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   :root .bg-black\/50 {
-    @apply bg-white/90;
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   :root .bg-black\/20 {
-    @apply bg-white/60;
+    background-color: rgba(255, 255, 255, 0.6);
   }
 
   /* Keep dark mode unchanged */
   .dark .text-gray-300 {
-    @apply text-gray-300;
+    color: rgb(209 213 219);
   }
 
   .dark .text-gray-400 {
-    @apply text-gray-400;
+    color: rgb(156 163 175);
   }
 
   .dark .text-white\/80 {
-    @apply text-white/80;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .dark .text-white {
-    @apply text-white;
+    color: rgb(255 255 255);
   }
 
   .dark .border-white\/10 {
-    @apply border-white/10;
+    border-color: rgba(255, 255, 255, 0.1);
   }
 
   .dark .border-white\/20 {
-    @apply border-white/20;
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
   .dark .bg-black\/40 {
-    @apply bg-black/40;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
   .dark .bg-black\/50 {
-    @apply bg-black/50;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .dark .bg-black\/20 {
-    @apply bg-black/20;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 
