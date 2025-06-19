@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
+    --background: 0 0% 96%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -19,37 +19,37 @@
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 210 40% 94%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 25%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215.4 16.3% 20%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 210 40% 94%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 85%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 80%;
+    --input: 214.3 31.8% 88%;
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 0 0% 96%;
 
-    --sidebar-foreground: 240 5.3% 15%;
+    --sidebar-foreground: 240 5.3% 10%;
 
     --sidebar-primary: 240 5.9% 10%;
 
     --sidebar-primary-foreground: 0 0% 98%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: 240 4.8% 92%;
 
     --sidebar-accent-foreground: 240 5.9% 10%;
 
-    --sidebar-border: 220 13% 85%;
+    --sidebar-border: 220 13% 80%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
@@ -123,43 +123,105 @@
   display: none; /* Chrome/Safari/Webkit */
 }
 
-/* Light mode text contrast improvements */
+/* Light mode improvements */
+@layer utilities {
+  /* Text color overrides for light mode */
+  :root .text-gray-300 {
+    @apply text-gray-700;
+  }
+
+  :root .text-gray-400 {
+    @apply text-gray-600;
+  }
+
+  :root .text-white\/80 {
+    @apply text-gray-800;
+  }
+
+  :root .text-white {
+    @apply text-gray-900;
+  }
+
+  /* Border improvements for light mode */
+  :root .border-white\/10 {
+    @apply border-gray-300;
+  }
+
+  :root .border-white\/20 {
+    @apply border-gray-400;
+  }
+
+  /* Background improvements for light mode */
+  :root .bg-black\/40 {
+    @apply bg-white/80;
+  }
+
+  :root .bg-black\/50 {
+    @apply bg-white/90;
+  }
+
+  :root .bg-black\/20 {
+    @apply bg-white/60;
+  }
+
+  /* Keep dark mode unchanged */
+  .dark .text-gray-300 {
+    @apply text-gray-300;
+  }
+
+  .dark .text-gray-400 {
+    @apply text-gray-400;
+  }
+
+  .dark .text-white\/80 {
+    @apply text-white/80;
+  }
+
+  .dark .text-white {
+    @apply text-white;
+  }
+
+  .dark .border-white\/10 {
+    @apply border-white/10;
+  }
+
+  .dark .border-white\/20 {
+    @apply border-white/20;
+  }
+
+  .dark .bg-black\/40 {
+    @apply bg-black/40;
+  }
+
+  .dark .bg-black\/50 {
+    @apply bg-black/50;
+  }
+
+  .dark .bg-black\/20 {
+    @apply bg-black/20;
+  }
+}
+
+/* Additional light mode specific improvements */
 :root {
-  /* Improved text colors for light mode */
-  --light-text-primary: 0 0% 10%;
-  --light-text-secondary: 0 0% 25%;
-  --light-text-muted: 0 0% 40%;
+  /* Improved card backgrounds in light mode */
+  --light-card-bg: rgba(255, 255, 255, 0.95);
+  --light-card-border: rgba(0, 0, 0, 0.15);
+  --light-section-bg: rgba(255, 255, 255, 0.85);
 }
 
 .dark {
-  /* Keep dark mode text colors unchanged */
-  --light-text-primary: 210 40% 98%;
-  --light-text-secondary: 210 40% 85%;
-  --light-text-muted: 215 20.2% 65.1%;
+  --light-card-bg: rgba(0, 0, 0, 0.4);
+  --light-card-border: rgba(255, 255, 255, 0.1);
+  --light-section-bg: rgba(0, 0, 0, 0.4);
 }
 
-/* Override specific text elements for better contrast in light mode */
-:root .text-gray-300 {
-  color: hsl(var(--light-text-secondary));
+/* Override specific component backgrounds and borders for light mode */
+:root .bg-black\/40.backdrop-blur-xl {
+  background: var(--light-section-bg);
+  border-color: var(--light-card-border);
 }
 
-:root .text-gray-400 {
-  color: hsl(var(--light-text-muted));
-}
-
-:root .text-white\/80 {
-  color: hsl(var(--light-text-primary));
-}
-
-/* Ensure dark mode keeps original colors */
-.dark .text-gray-300 {
-  color: rgb(209 213 219);
-}
-
-.dark .text-gray-400 {
-  color: rgb(156 163 175);
-}
-
-.dark .text-white\/80 {
-  color: rgb(255 255 255 / 0.8);
+:root .bg-gradient-to-br.border {
+  border-color: var(--light-card-border) !important;
 }
