@@ -46,15 +46,15 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Light mode custom variables for better contrast */
+    /* Professional light mode variables */
     --light-card-bg: 255 255 255;
-    --light-card-border: 220 13% 85%;
-    --light-text-primary: 15 23% 15%;
-    --light-text-secondary: 15 23% 25%;
-    --light-text-muted: 15 23% 45%;
-    --light-section-bg: 220 14% 96%;
+    --light-card-border: 220 13% 88%;
+    --light-text-primary: 30 10% 15%;
+    --light-text-secondary: 30 10% 25%;
+    --light-text-muted: 30 10% 45%;
+    --light-section-bg: 215 25% 97%;
     --light-gradient-start: 255 255 255;
-    --light-gradient-end: 240 14% 98%;
+    --light-gradient-end: 215 25% 98%;
   }
 
   .dark {
@@ -115,12 +115,12 @@
     min-height: 100vh;
   }
 
-  /* Light mode specific styles for better contrast */
+  /* Professional light mode styling */
   body:not(.dark) {
     background: linear-gradient(135deg, hsl(var(--light-gradient-start)), hsl(var(--light-gradient-end)));
   }
 
-  /* Improve text contrast in light mode */
+  /* Improve text contrast in light mode with professional colors */
   body:not(.dark) .text-gray-300 {
     color: hsl(var(--light-text-secondary)) !important;
   }
@@ -139,169 +139,165 @@
     font-weight: 600;
   }
 
-  /* Fix card backgrounds in light mode */
+  /* Professional card backgrounds in light mode */
   body:not(.dark) .bg-black\/40 {
     background: hsl(var(--light-card-bg) / 0.95) !important;
     border: 1px solid hsl(var(--light-card-border)) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08) !important;
   }
 
   body:not(.dark) .bg-black\/20 {
-    background: hsl(var(--light-card-bg) / 0.8) !important;
+    background: hsl(var(--light-card-bg) / 0.9) !important;
     border: 1px solid hsl(var(--light-card-border)) !important;
   }
 
-  /* Improve gradient backgrounds in light mode */
+  /* Professional gradient backgrounds */
   body:not(.dark) .bg-gradient-to-br {
     background: hsl(var(--light-section-bg)) !important;
     border: 1px solid hsl(var(--light-card-border)) !important;
   }
 
-  /* Fix theme toggle button in light mode */
+  /* Professional theme toggle styling */
   body:not(.dark) .bg-white\/20 {
-    background: hsl(var(--light-card-bg)) !important;
-    border: 2px solid hsl(220 13% 80%) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    background: hsl(var(--light-card-bg) / 0.95) !important;
+    border: 2px solid hsl(215 25% 85%) !important;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.1) !important;
   }
 
-  /* Improve border colors in light mode */
+  /* Professional border colors */
   body:not(.dark) .border-white\/10 {
     border-color: hsl(var(--light-card-border)) !important;
   }
 
   body:not(.dark) .border-white\/20 {
-    border-color: hsl(220 13% 80%) !important;
+    border-color: hsl(215 25% 85%) !important;
   }
 
-  /* Fix backdrop blur backgrounds */
+  /* Professional backdrop blur backgrounds */
   body:not(.dark) .backdrop-blur-xl {
-    background: hsl(var(--light-card-bg) / 0.9) !important;
+    background: hsl(var(--light-card-bg) / 0.95) !important;
   }
 
-  /* Improve floating elements visibility */
+  /* Professional floating elements */
   body:not(.dark) .bg-gray-700\/50 {
-    background: hsl(220 13% 85%) !important;
+    background: hsl(215 25% 88%) !important;
     color: hsl(var(--light-text-primary)) !important;
   }
 
   body:not(.dark) .bg-gray-600\/50 {
-    background: hsl(220 13% 80%) !important;
+    background: hsl(215 25% 85%) !important;
   }
 
   body:not(.dark) .border-gray-600\/50 {
-    border-color: hsl(220 13% 75%) !important;
+    border-color: hsl(215 25% 80%) !important;
   }
 
   body:not(.dark) .border-gray-500\/50 {
-    border-color: hsl(220 13% 70%) !important;
+    border-color: hsl(215 25% 75%) !important;
   }
 
-  body:not(.dark) .text-gray-300 {
-    color: hsl(var(--light-text-secondary)) !important;
-  }
-
-  /* Fix experience section colors */
+  /* Professional experience section colors */
   body:not(.dark) .bg-gradient-to-br.from-cyan-500\/8 {
-    background: linear-gradient(to bottom right, hsl(190 95% 95%), hsl(var(--light-section-bg))) !important;
+    background: linear-gradient(to bottom right, hsl(200 95% 95%), hsl(var(--light-section-bg))) !important;
   }
 
   body:not(.dark) .bg-gradient-to-br.from-purple-500\/8 {
-    background: linear-gradient(to bottom right, hsl(280 100% 95%), hsl(var(--light-section-bg))) !important;
+    background: linear-gradient(to bottom right, hsl(270 95% 95%), hsl(var(--light-section-bg))) !important;
   }
 
   body:not(.dark) .bg-gradient-to-br.from-blue-500\/8 {
-    background: linear-gradient(to bottom right, hsl(210 100% 95%), hsl(var(--light-section-bg))) !important;
+    background: linear-gradient(to bottom right, hsl(215 95% 95%), hsl(var(--light-section-bg))) !important;
   }
 
   body:not(.dark) .bg-gradient-to-br.from-green-500\/8 {
-    background: linear-gradient(to bottom right, hsl(120 60% 95%), hsl(var(--light-section-bg))) !important;
+    background: linear-gradient(to bottom right, hsl(160 80% 95%), hsl(var(--light-section-bg))) !important;
   }
 
   body:not(.dark) .bg-gradient-to-br.from-pink-500\/8 {
-    background: linear-gradient(to bottom right, hsl(330 80% 95%), hsl(var(--light-section-bg))) !important;
+    background: linear-gradient(to bottom right, hsl(330 75% 95%), hsl(var(--light-section-bg))) !important;
   }
 
   body:not(.dark) .bg-gradient-to-br.from-orange-500\/8 {
-    background: linear-gradient(to bottom right, hsl(25 95% 95%), hsl(var(--light-section-bg))) !important;
+    background: linear-gradient(to bottom right, hsl(30 90% 95%), hsl(var(--light-section-bg))) !important;
   }
 
-  /* Improve color contrast for colored text in light mode */
+  /* Professional colored text in light mode */
   body:not(.dark) .text-cyan-300 {
-    color: hsl(190 95% 35%) !important;
+    color: hsl(200 85% 35%) !important;
     font-weight: 600;
   }
 
   body:not(.dark) .text-purple-300 {
-    color: hsl(280 100% 35%) !important;
+    color: hsl(270 75% 40%) !important;
     font-weight: 600;
   }
 
   body:not(.dark) .text-blue-300 {
-    color: hsl(210 100% 35%) !important;
+    color: hsl(215 85% 40%) !important;
     font-weight: 600;
   }
 
   body:not(.dark) .text-green-300 {
-    color: hsl(120 60% 30%) !important;
+    color: hsl(160 65% 35%) !important;
     font-weight: 600;
   }
 
   body:not(.dark) .text-pink-300 {
-    color: hsl(330 80% 40%) !important;
+    color: hsl(330 70% 45%) !important;
     font-weight: 600;
   }
 
   body:not(.dark) .text-orange-300 {
-    color: hsl(25 95% 40%) !important;
+    color: hsl(30 85% 45%) !important;
     font-weight: 600;
   }
 
-  /* Fix gradient text colors for better readability */
+  /* Professional gradient text colors */
   body:not(.dark) .bg-gradient-to-r.from-cyan-300 {
-    background: linear-gradient(to right, hsl(190 95% 30%), hsl(190 95% 40%)) !important;
+    background: linear-gradient(to right, hsl(200 85% 35%), hsl(200 85% 45%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
   body:not(.dark) .bg-gradient-to-r.from-purple-300 {
-    background: linear-gradient(to right, hsl(280 100% 30%), hsl(280 100% 40%)) !important;
+    background: linear-gradient(to right, hsl(270 75% 40%), hsl(270 75% 50%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
   body:not(.dark) .bg-gradient-to-r.from-blue-300 {
-    background: linear-gradient(to right, hsl(210 100% 30%), hsl(210 100% 40%)) !important;
+    background: linear-gradient(to right, hsl(215 85% 40%), hsl(215 85% 50%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
   body:not(.dark) .bg-gradient-to-r.from-green-300 {
-    background: linear-gradient(to right, hsl(120 60% 25%), hsl(120 60% 35%)) !important;
+    background: linear-gradient(to right, hsl(160 65% 35%), hsl(160 65% 45%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
   body:not(.dark) .bg-gradient-to-r.from-pink-300 {
-    background: linear-gradient(to right, hsl(330 80% 35%), hsl(330 80% 45%)) !important;
+    background: linear-gradient(to right, hsl(330 70% 45%), hsl(330 70% 55%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
   body:not(.dark) .bg-gradient-to-r.from-orange-300 {
-    background: linear-gradient(to right, hsl(25 95% 35%), hsl(25 95% 45%)) !important;
+    background: linear-gradient(to right, hsl(30 85% 45%), hsl(30 85% 55%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
-  /* Fix hero section gradients */
+  /* Professional hero section gradients */
   body:not(.dark) .bg-gradient-to-r.from-cyan-300.via-purple-400 {
-    background: linear-gradient(to right, hsl(190 95% 30%), hsl(280 100% 35%), hsl(330 80% 40%)) !important;
+    background: linear-gradient(to right, hsl(200 85% 35%), hsl(270 75% 45%), hsl(330 70% 50%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
   body:not(.dark) .bg-gradient-to-r.from-pink-400.via-purple-400 {
-    background: linear-gradient(to right, hsl(330 80% 35%), hsl(280 100% 35%), hsl(190 95% 30%)) !important;
+    background: linear-gradient(to right, hsl(330 70% 45%), hsl(270 75% 45%), hsl(200 85% 35%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }

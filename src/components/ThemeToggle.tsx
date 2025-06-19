@@ -11,15 +11,15 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className={`fixed top-6 right-6 z-50 p-4 rounded-full border-2 backdrop-blur-xl transition-all duration-300 group overflow-hidden
         ${isDark 
-          ? 'bg-black/20 border-white/20 hover:border-yellow-400/60 text-yellow-400' 
-          : 'bg-white/20 border-black/20 hover:border-purple-500/60 text-purple-600'
+          ? 'bg-black/20 border-white/20 hover:border-blue-400/60 text-blue-400' 
+          : 'bg-white/90 border-gray-300 hover:border-blue-500/60 text-blue-600 shadow-lg'
         }`}
       whileHover={{ 
         scale: 1.15,
         rotate: 360,
         boxShadow: isDark 
-          ? "0 0 30px rgba(251, 191, 36, 0.4), 0 0 60px rgba(251, 191, 36, 0.2)" 
-          : "0 0 30px rgba(147, 51, 234, 0.4), 0 0 60px rgba(147, 51, 234, 0.2)",
+          ? "0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2)" 
+          : "0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2)",
         transition: { 
           duration: 0.4, 
           ease: "easeOut",
@@ -39,8 +39,8 @@ export default function ThemeToggle() {
       <motion.div
         className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300
           ${isDark 
-            ? 'bg-gradient-to-r from-yellow-400/30 via-orange-500/30 to-red-500/30' 
-            : 'bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-indigo-500/30'
+            ? 'bg-gradient-to-r from-blue-400/30 via-cyan-500/30 to-purple-500/30' 
+            : 'bg-gradient-to-r from-blue-500/30 via-indigo-500/30 to-purple-500/30'
           }`}
         animate={{
           rotate: [0, 360],
@@ -52,7 +52,7 @@ export default function ThemeToggle() {
         }}
       />
       
-      {/* Icon container with crazy animations */}
+      {/* Icon container */}
       <motion.div
         className="relative z-10 flex items-center justify-center"
         whileHover={{
@@ -90,12 +90,12 @@ export default function ThemeToggle() {
         >
           {isDark ? (
             <Moon 
-              className="w-6 h-6 drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]" 
+              className="w-6 h-6 drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]" 
               fill="currentColor"
             />
           ) : (
             <Sun 
-              className="w-6 h-6 drop-shadow-[0_0_8px_rgba(147,51,234,0.6)]" 
+              className="w-6 h-6 drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]" 
             />
           )}
         </motion.div>
@@ -106,7 +106,7 @@ export default function ThemeToggle() {
         <motion.div
           key={i}
           className={`absolute w-1 h-1 rounded-full opacity-0 group-hover:opacity-100
-            ${isDark ? 'bg-yellow-400' : 'bg-purple-500'}`}
+            ${isDark ? 'bg-blue-400' : 'bg-blue-500'}`}
           style={{
             top: '50%',
             left: '50%',
