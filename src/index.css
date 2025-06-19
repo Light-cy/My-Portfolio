@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -23,7 +23,7 @@
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 215.4 16.3% 25%;
 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -31,7 +31,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 85%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
@@ -39,7 +39,7 @@
 
     --sidebar-background: 0 0% 98%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 240 5.3% 15%;
 
     --sidebar-primary: 240 5.9% 10%;
 
@@ -49,7 +49,7 @@
 
     --sidebar-accent-foreground: 240 5.9% 10%;
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 220 13% 85%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
@@ -121,4 +121,45 @@
 
 .scrollbar-hidden::-webkit-scrollbar {
   display: none; /* Chrome/Safari/Webkit */
+}
+
+/* Light mode text contrast improvements */
+:root {
+  /* Improved text colors for light mode */
+  --light-text-primary: 0 0% 10%;
+  --light-text-secondary: 0 0% 25%;
+  --light-text-muted: 0 0% 40%;
+}
+
+.dark {
+  /* Keep dark mode text colors unchanged */
+  --light-text-primary: 210 40% 98%;
+  --light-text-secondary: 210 40% 85%;
+  --light-text-muted: 215 20.2% 65.1%;
+}
+
+/* Override specific text elements for better contrast in light mode */
+:root .text-gray-300 {
+  color: hsl(var(--light-text-secondary));
+}
+
+:root .text-gray-400 {
+  color: hsl(var(--light-text-muted));
+}
+
+:root .text-white\/80 {
+  color: hsl(var(--light-text-primary));
+}
+
+/* Ensure dark mode keeps original colors */
+.dark .text-gray-300 {
+  color: rgb(209 213 219);
+}
+
+.dark .text-gray-400 {
+  color: rgb(156 163 175);
+}
+
+.dark .text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
 }
