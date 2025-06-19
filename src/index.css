@@ -151,17 +151,17 @@
     border-color: rgb(156 163 175); /* equivalent to border-gray-400 */
   }
 
-  /* Background improvements for light mode */
+  /* Background improvements for light mode - darker backgrounds for better contrast */
   :root .bg-black\/40 {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(30, 41, 59, 0.85); /* darker slate background */
   }
 
   :root .bg-black\/50 {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(30, 41, 59, 0.9); /* darker slate background */
   }
 
   :root .bg-black\/20 {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(51, 65, 85, 0.8); /* darker slate background */
   }
 
   /* Keep dark mode unchanged */
@@ -204,10 +204,10 @@
 
 /* Additional light mode specific improvements */
 :root {
-  /* Improved card backgrounds in light mode */
-  --light-card-bg: rgba(255, 255, 255, 0.95);
-  --light-card-border: rgba(0, 0, 0, 0.15);
-  --light-section-bg: rgba(255, 255, 255, 0.85);
+  /* Improved card backgrounds in light mode - darker for better contrast */
+  --light-card-bg: rgba(30, 41, 59, 0.9);
+  --light-card-border: rgba(0, 0, 0, 0.2);
+  --light-section-bg: rgba(51, 65, 85, 0.85);
 }
 
 .dark {
