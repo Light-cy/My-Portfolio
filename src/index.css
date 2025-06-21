@@ -95,7 +95,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   html {
@@ -103,7 +103,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -123,118 +124,55 @@
   display: none; /* Chrome/Safari/Webkit */
 }
 
-/* Light mode improvements */
-@layer utilities {
-  /* Text color overrides for light mode */
-  :root .text-gray-300 {
-    color: rgb(55 65 81); /* equivalent to text-gray-700 */
+/* LIGHT MODE SPECIFIC OVERRIDES - HIGHER PRIORITY */
+@layer components {
+  /* Light mode: Make card backgrounds much darker for better contrast */
+  html:not(.dark) .bg-black\/40 {
+    background-color: rgba(15, 23, 42, 0.95) !important; /* Very dark slate */
   }
 
-  :root .text-gray-400 {
-    color: rgb(75 85 99); /* equivalent to text-gray-600 */
+  html:not(.dark) .bg-black\/50 {
+    background-color: rgba(15, 23, 42, 0.98) !important; /* Almost black slate */
   }
 
-  :root .text-white\/80 {
-    color: rgb(31 41 55); /* equivalent to text-gray-800 */
+  html:not(.dark) .bg-black\/20 {
+    background-color: rgba(30, 41, 59, 0.9) !important; /* Dark slate */
   }
 
-  :root .text-white {
-    color: rgb(17 24 39); /* equivalent to text-gray-900 */
+  /* Light mode: Force white text on dark backgrounds */
+  html:not(.dark) .text-white {
+    color: rgb(255, 255, 255) !important;
   }
 
-  /* Force black text to white in light mode for better readability */
-  :root .text-black {
-    color: rgb(255 255 255) !important;
+  html:not(.dark) .text-white\/80 {
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 
-  :root .text-gray-900 {
-    color: rgb(255 255 255) !important;
+  html:not(.dark) .text-gray-300 {
+    color: rgb(203, 213, 225) !important; /* Light gray for good contrast on dark bg */
   }
 
-  :root .text-gray-800 {
-    color: rgb(255 255 255) !important;
+  html:not(.dark) .text-gray-400 {
+    color: rgb(148, 163, 184) !important; /* Medium gray for good contrast */
   }
 
-  /* Border improvements for light mode */
-  :root .border-white\/10 {
-    border-color: rgb(209 213 219); /* equivalent to border-gray-300 */
+  /* Light mode: Improve borders */
+  html:not(.dark) .border-white\/10 {
+    border-color: rgba(255, 255, 255, 0.2) !important;
   }
 
-  :root .border-white\/20 {
-    border-color: rgb(156 163 175); /* equivalent to border-gray-400 */
+  html:not(.dark) .border-white\/20 {
+    border-color: rgba(255, 255, 255, 0.3) !important;
   }
 
-  /* Background improvements for light mode - darker backgrounds for better contrast */
-  :root .bg-black\/40 {
-    background-color: rgba(30, 41, 59, 0.85); /* darker slate background */
+  /* Light mode: Gradient backgrounds for cards */
+  html:not(.dark) .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)) !important;
   }
 
-  :root .bg-black\/50 {
-    background-color: rgba(30, 41, 59, 0.9); /* darker slate background */
+  /* Light mode: Backdrop blur containers */
+  html:not(.dark) .backdrop-blur-xl {
+    backdrop-filter: blur(24px) !important;
+    background-color: rgba(15, 23, 42, 0.95) !important;
   }
-
-  :root .bg-black\/20 {
-    background-color: rgba(51, 65, 85, 0.8); /* darker slate background */
-  }
-
-  /* Keep dark mode unchanged */
-  .dark .text-gray-300 {
-    color: rgb(209 213 219);
-  }
-
-  .dark .text-gray-400 {
-    color: rgb(156 163 175);
-  }
-
-  .dark .text-white\/80 {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .dark .text-white {
-    color: rgb(255 255 255);
-  }
-
-  .dark .border-white\/10 {
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .dark .border-white\/20 {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .dark .bg-black\/40 {
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .dark .bg-black\/50 {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .dark .bg-black\/20 {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-}
-
-/* Additional light mode specific improvements */
-:root {
-  /* Improved card backgrounds in light mode - darker for better contrast */
-  --light-card-bg: rgba(30, 41, 59, 0.9);
-  --light-card-border: rgba(0, 0, 0, 0.2);
-  --light-section-bg: rgba(51, 65, 85, 0.85);
-}
-
-.dark {
-  --light-card-bg: rgba(0, 0, 0, 0.4);
-  --light-card-border: rgba(255, 255, 255, 0.1);
-  --light-section-bg: rgba(0, 0, 0, 0.4);
-}
-
-/* Override specific component backgrounds and borders for light mode */
-:root .bg-black\/40.backdrop-blur-xl {
-  background: var(--light-section-bg);
-  border-color: var(--light-card-border);
-}
-
-:root .bg-gradient-to-br.border {
-  border-color: var(--light-card-border) !important;
 }
