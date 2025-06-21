@@ -142,6 +142,19 @@
     color: rgb(17 24 39); /* equivalent to text-gray-900 */
   }
 
+  /* Force black text to white in light mode for better readability */
+  :root .text-black {
+    color: rgb(255 255 255) !important;
+  }
+
+  :root .text-gray-900 {
+    color: rgb(255 255 255) !important;
+  }
+
+  :root .text-gray-800 {
+    color: rgb(255 255 255) !important;
+  }
+
   /* Border improvements for light mode */
   :root .border-white\/10 {
     border-color: rgb(209 213 219); /* equivalent to border-gray-300 */
