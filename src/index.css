@@ -124,55 +124,22 @@
   display: none; /* Chrome/Safari/Webkit */
 }
 
-/* LIGHT MODE SPECIFIC OVERRIDES - HIGHER PRIORITY */
+/* Light mode text readability improvements */
 @layer components {
-  /* Light mode: Make card backgrounds much darker for better contrast */
-  html:not(.dark) .bg-black\/40 {
-    background-color: rgba(15, 23, 42, 0.95) !important; /* Very dark slate */
-  }
-
-  html:not(.dark) .bg-black\/50 {
-    background-color: rgba(15, 23, 42, 0.98) !important; /* Almost black slate */
-  }
-
-  html:not(.dark) .bg-black\/20 {
-    background-color: rgba(30, 41, 59, 0.9) !important; /* Dark slate */
-  }
-
-  /* Light mode: Force white text on dark backgrounds */
+  /* Only fix text colors in light mode - keep everything else as normal light theme */
   html:not(.dark) .text-white {
-    color: rgb(255, 255, 255) !important;
+    color: rgb(17, 24, 39) !important; /* Dark gray instead of white for light mode */
   }
 
   html:not(.dark) .text-white\/80 {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(17, 24, 39, 0.8) !important; /* Dark gray with opacity */
   }
 
   html:not(.dark) .text-gray-300 {
-    color: rgb(203, 213, 225) !important; /* Light gray for good contrast on dark bg */
+    color: rgb(55, 65, 81) !important; /* Darker gray for better contrast */
   }
 
   html:not(.dark) .text-gray-400 {
-    color: rgb(148, 163, 184) !important; /* Medium gray for good contrast */
-  }
-
-  /* Light mode: Improve borders */
-  html:not(.dark) .border-white\/10 {
-    border-color: rgba(255, 255, 255, 0.2) !important;
-  }
-
-  html:not(.dark) .border-white\/20 {
-    border-color: rgba(255, 255, 255, 0.3) !important;
-  }
-
-  /* Light mode: Gradient backgrounds for cards */
-  html:not(.dark) .bg-gradient-to-br {
-    background-image: linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)) !important;
-  }
-
-  /* Light mode: Backdrop blur containers */
-  html:not(.dark) .backdrop-blur-xl {
-    backdrop-filter: blur(24px) !important;
-    background-color: rgba(15, 23, 42, 0.95) !important;
+    color: rgb(75, 85, 99) !important; /* Darker gray for better contrast */
   }
 }
