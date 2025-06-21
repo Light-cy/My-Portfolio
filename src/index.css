@@ -38,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 96%;
-
     --sidebar-foreground: 240 5.3% 10%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 92%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 80%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -124,22 +117,237 @@
   display: none; /* Chrome/Safari/Webkit */
 }
 
-/* Light mode text readability improvements */
+/* Theme-aware component styles */
 @layer components {
-  /* Only fix text colors in light mode - keep everything else as normal light theme */
-  html:not(.dark) .text-white {
-    color: rgb(17, 24, 39) !important; /* Dark gray instead of white for light mode */
+  /* Card/Section backgrounds - theme aware */
+  .theme-card {
+    @apply bg-white/90 dark:bg-black/40 backdrop-blur-xl;
+    @apply border-gray-200 dark:border-white/10;
+    @apply shadow-lg dark:shadow-2xl;
   }
 
-  html:not(.dark) .text-white\/80 {
-    color: rgba(17, 24, 39, 0.8) !important; /* Dark gray with opacity */
+  .theme-card-hover {
+    @apply hover:bg-white/95 dark:hover:bg-black/50;
+    @apply hover:shadow-xl dark:hover:shadow-2xl;
   }
 
-  html:not(.dark) .text-gray-300 {
-    color: rgb(55, 65, 81) !important; /* Darker gray for better contrast */
+  /* Navigation backgrounds */
+  .theme-nav {
+    @apply bg-white/95 dark:bg-black/20 backdrop-blur-xl;
+    @apply border-gray-200/50 dark:border-white/10;
+    @apply shadow-lg dark:shadow-2xl;
   }
 
-  html:not(.dark) .text-gray-400 {
-    color: rgb(75, 85, 99) !important; /* Darker gray for better contrast */
+  /* Button backgrounds */
+  .theme-button-outline {
+    @apply border-gray-300 dark:border-white/20;
+    @apply bg-white/80 dark:bg-black/40;
+    @apply hover:bg-gray-50 dark:hover:bg-white/10;
+    @apply text-gray-900 dark:text-white;
+  }
+
+  /* Text hierarchy - theme aware */
+  .theme-text-primary {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  .theme-text-secondary {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .theme-text-muted {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .theme-text-accent {
+    @apply text-gray-800 dark:text-white/80;
+  }
+
+  /* Project card variants for light theme */
+  .theme-project-cyan {
+    @apply bg-cyan-50/80 dark:bg-gradient-to-br dark:from-cyan-500/8 dark:to-transparent;
+    @apply border-cyan-200 dark:border-cyan-500/20;
+    @apply hover:border-cyan-300 dark:hover:border-cyan-500/40;
+  }
+
+  .theme-project-purple {
+    @apply bg-purple-50/80 dark:bg-gradient-to-br dark:from-purple-500/8 dark:to-transparent;
+    @apply border-purple-200 dark:border-purple-500/20;
+    @apply hover:border-purple-300 dark:hover:border-purple-500/40;
+  }
+
+  .theme-project-blue {
+    @apply bg-blue-50/80 dark:bg-gradient-to-br dark:from-blue-500/8 dark:to-transparent;
+    @apply border-blue-200 dark:border-blue-500/20;
+    @apply hover:border-blue-300 dark:hover:border-blue-500/40;
+  }
+
+  .theme-project-green {
+    @apply bg-green-50/80 dark:bg-gradient-to-br dark:from-green-500/8 dark:to-transparent;
+    @apply border-green-200 dark:border-green-500/20;
+    @apply hover:border-green-300 dark:hover:border-green-500/40;
+  }
+
+  .theme-project-pink {
+    @apply bg-pink-50/80 dark:bg-gradient-to-br dark:from-pink-500/8 dark:to-transparent;
+    @apply border-pink-200 dark:border-pink-500/20;
+    @apply hover:border-pink-300 dark:hover:border-pink-500/40;
+  }
+
+  .theme-project-orange {
+    @apply bg-orange-50/80 dark:bg-gradient-to-br dark:from-orange-500/8 dark:to-transparent;
+    @apply border-orange-200 dark:border-orange-500/20;
+    @apply hover:border-orange-300 dark:hover:border-orange-500/40;
+  }
+
+  /* Experience card variants */
+  .theme-experience-cyan {
+    @apply bg-cyan-50/60 dark:bg-gradient-to-br dark:from-cyan-500/8 dark:to-transparent;
+    @apply border-cyan-200 dark:border-cyan-500/20;
+    @apply hover:border-cyan-300 dark:hover:border-cyan-500/40;
+  }
+
+  .theme-experience-purple {
+    @apply bg-purple-50/60 dark:bg-gradient-to-br dark:from-purple-500/8 dark:to-transparent;
+    @apply border-purple-200 dark:border-purple-500/20;
+    @apply hover:border-purple-300 dark:hover:border-purple-500/40;
+  }
+
+  .theme-experience-blue {
+    @apply bg-blue-50/60 dark:bg-gradient-to-br dark:from-blue-500/8 dark:to-transparent;
+    @apply border-blue-200 dark:border-blue-500/20;
+    @apply hover:border-blue-300 dark:hover:border-blue-500/40;
+  }
+
+  .theme-experience-green {
+    @apply bg-green-50/60 dark:bg-gradient-to-br dark:from-green-500/8 dark:to-transparent;
+    @apply border-green-200 dark:border-green-500/20;
+    @apply hover:border-green-300 dark:hover:border-green-500/40;
+  }
+
+  /* Color variants for text in light theme */
+  .theme-text-cyan {
+    @apply text-cyan-700 dark:text-cyan-300;
+  }
+
+  .theme-text-purple {
+    @apply text-purple-700 dark:text-purple-300;
+  }
+
+  .theme-text-blue {
+    @apply text-blue-700 dark:text-blue-300;
+  }
+
+  .theme-text-green {
+    @apply text-green-700 dark:text-green-300;
+  }
+
+  .theme-text-pink {
+    @apply text-pink-700 dark:text-pink-300;
+  }
+
+  .theme-text-orange {
+    @apply text-orange-700 dark:text-orange-300;
+  }
+
+  /* Gradient text variants */
+  .theme-gradient-cyan {
+    @apply bg-gradient-to-r from-cyan-600 to-cyan-700 dark:from-cyan-300 dark:to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .theme-gradient-purple {
+    @apply bg-gradient-to-r from-purple-600 to-purple-700 dark:from-purple-300 dark:to-purple-400 bg-clip-text text-transparent;
+  }
+
+  .theme-gradient-blue {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-300 dark:to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .theme-gradient-green {
+    @apply bg-gradient-to-r from-green-600 to-green-700 dark:from-green-300 dark:to-green-400 bg-clip-text text-transparent;
+  }
+
+  .theme-gradient-pink {
+    @apply bg-gradient-to-r from-pink-600 to-pink-700 dark:from-pink-300 dark:to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .theme-gradient-orange {
+    @apply bg-gradient-to-r from-orange-600 to-orange-700 dark:from-orange-300 dark:to-orange-400 bg-clip-text text-transparent;
+  }
+
+  /* Icon colors */
+  .theme-icon-cyan {
+    @apply text-cyan-600 dark:text-cyan-300;
+  }
+
+  .theme-icon-purple {
+    @apply text-purple-600 dark:text-purple-300;
+  }
+
+  .theme-icon-blue {
+    @apply text-blue-600 dark:text-blue-300;
+  }
+
+  .theme-icon-green {
+    @apply text-green-600 dark:text-green-300;
+  }
+
+  .theme-icon-pink {
+    @apply text-pink-600 dark:text-pink-300;
+  }
+
+  .theme-icon-orange {
+    @apply text-orange-600 dark:text-orange-300;
+  }
+
+  /* Skills tag variants */
+  .theme-skill-cyan {
+    @apply bg-cyan-100 dark:bg-cyan-500/15 border-cyan-300 dark:border-cyan-500/30;
+    @apply text-cyan-800 dark:text-cyan-200;
+  }
+
+  .theme-skill-blue {
+    @apply bg-blue-100 dark:bg-blue-500/15 border-blue-300 dark:border-blue-500/30;
+    @apply text-blue-800 dark:text-blue-200;
+  }
+
+  .theme-skill-purple {
+    @apply bg-purple-100 dark:bg-purple-500/15 border-purple-300 dark:border-purple-500/30;
+    @apply text-purple-800 dark:text-purple-200;
+  }
+
+  .theme-skill-green {
+    @apply bg-green-100 dark:bg-green-500/15 border-green-300 dark:border-green-500/30;
+    @apply text-green-800 dark:text-green-200;
+  }
+
+  .theme-skill-pink {
+    @apply bg-pink-100 dark:bg-pink-500/15 border-pink-300 dark:border-pink-500/30;
+    @apply text-pink-800 dark:text-pink-200;
+  }
+
+  .theme-skill-orange {
+    @apply bg-orange-100 dark:bg-orange-500/15 border-orange-300 dark:border-orange-500/30;
+    @apply text-orange-800 dark:text-orange-200;
+  }
+
+  .theme-skill-yellow {
+    @apply bg-yellow-100 dark:bg-yellow-500/15 border-yellow-300 dark:border-yellow-500/30;
+    @apply text-yellow-800 dark:text-yellow-200;
+  }
+
+  .theme-skill-teal {
+    @apply bg-teal-100 dark:bg-teal-500/15 border-teal-300 dark:border-teal-500/30;
+    @apply text-teal-800 dark:text-teal-200;
+  }
+
+  .theme-skill-red {
+    @apply bg-red-100 dark:bg-red-500/15 border-red-300 dark:border-red-500/30;
+    @apply text-red-800 dark:text-red-200;
+  }
+
+  .theme-skill-indigo {
+    @apply bg-indigo-100 dark:bg-indigo-500/15 border-indigo-300 dark:border-indigo-500/30;
+    @apply text-indigo-800 dark:text-indigo-200;
   }
 }

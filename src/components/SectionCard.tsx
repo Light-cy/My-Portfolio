@@ -11,43 +11,43 @@ interface SectionCardProps {
 }
 
 export default function SectionCard({ id, title, icon: Icon, color, children }: SectionCardProps) {
-  // Define explicit color mappings to ensure Tailwind generates the classes
+  // Define explicit color mappings to ensure theme-aware styles
   const colorClasses = {
     cyan: {
-      iconBg: "from-cyan-500/20 to-cyan-600/20",
-      iconBorder: "border-cyan-500/30",
-      iconText: "text-cyan-300",
-      titleText: "from-cyan-300 via-cyan-400 to-cyan-500"
+      iconBg: "bg-cyan-100/80 dark:bg-gradient-to-br dark:from-cyan-500/20 dark:to-cyan-600/20",
+      iconBorder: "border-cyan-300 dark:border-cyan-500/30",
+      iconText: "theme-icon-cyan",
+      titleText: "theme-gradient-cyan"
     },
     purple: {
-      iconBg: "from-purple-500/20 to-purple-600/20",
-      iconBorder: "border-purple-500/30",
-      iconText: "text-purple-300",
-      titleText: "from-purple-300 via-purple-400 to-purple-500"
+      iconBg: "bg-purple-100/80 dark:bg-gradient-to-br dark:from-purple-500/20 dark:to-purple-600/20",
+      iconBorder: "border-purple-300 dark:border-purple-500/30",
+      iconText: "theme-icon-purple",
+      titleText: "theme-gradient-purple"
     },
     blue: {
-      iconBg: "from-blue-500/20 to-blue-600/20",
-      iconBorder: "border-blue-500/30",
-      iconText: "text-blue-300",
-      titleText: "from-blue-300 via-blue-400 to-blue-500"
+      iconBg: "bg-blue-100/80 dark:bg-gradient-to-br dark:from-blue-500/20 dark:to-blue-600/20",
+      iconBorder: "border-blue-300 dark:border-blue-500/30",
+      iconText: "theme-icon-blue",
+      titleText: "theme-gradient-blue"
     },
     green: {
-      iconBg: "from-green-500/20 to-green-600/20",
-      iconBorder: "border-green-500/30",
-      iconText: "text-green-300",
-      titleText: "from-green-300 via-green-400 to-green-500"
+      iconBg: "bg-green-100/80 dark:bg-gradient-to-br dark:from-green-500/20 dark:to-green-600/20",
+      iconBorder: "border-green-300 dark:border-green-500/30",
+      iconText: "theme-icon-green",
+      titleText: "theme-gradient-green"
     },
     pink: {
-      iconBg: "from-pink-500/20 to-pink-600/20",
-      iconBorder: "border-pink-500/30",
-      iconText: "text-pink-300",
-      titleText: "from-pink-300 via-pink-400 to-pink-500"
+      iconBg: "bg-pink-100/80 dark:bg-gradient-to-br dark:from-pink-500/20 dark:to-pink-600/20",
+      iconBorder: "border-pink-300 dark:border-pink-500/30",
+      iconText: "theme-icon-pink",
+      titleText: "theme-gradient-pink"
     },
     orange: {
-      iconBg: "from-orange-500/20 to-orange-600/20",
-      iconBorder: "border-orange-500/30",
-      iconText: "text-orange-300",
-      titleText: "from-orange-300 via-orange-400 to-orange-500"
+      iconBg: "bg-orange-100/80 dark:bg-gradient-to-br dark:from-orange-500/20 dark:to-orange-600/20",
+      iconBorder: "border-orange-300 dark:border-orange-500/30",
+      iconText: "theme-icon-orange",
+      titleText: "theme-gradient-orange"
     }
   };
 
@@ -56,7 +56,7 @@ export default function SectionCard({ id, title, icon: Icon, color, children }: 
   return (
     <motion.section
       id={id}
-      className="relative w-full rounded-3xl bg-black/40 backdrop-blur-xl border border-white/10 p-8 md:p-12 shadow-2xl"
+      className="relative w-full rounded-3xl theme-card p-8 md:p-12"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -70,7 +70,7 @@ export default function SectionCard({ id, title, icon: Icon, color, children }: 
         viewport={{ once: true }}
       >
         <motion.div
-          className={`p-3 rounded-2xl bg-gradient-to-br ${currentColors.iconBg} border ${currentColors.iconBorder}`}
+          className={`p-3 rounded-2xl ${currentColors.iconBg} border ${currentColors.iconBorder}`}
           whileHover={{ 
             rotate: [0, -5, 5, 0],
             scale: 1.05,
@@ -80,7 +80,7 @@ export default function SectionCard({ id, title, icon: Icon, color, children }: 
           <Icon className={`w-8 h-8 ${currentColors.iconText}`} />
         </motion.div>
         <motion.h2 
-          className={`text-4xl md:text-5xl font-black tracking-tight font-orbitron bg-gradient-to-r ${currentColors.titleText} bg-clip-text text-transparent`}
+          className={`text-4xl md:text-5xl font-black tracking-tight font-orbitron ${currentColors.titleText}`}
           whileHover={{ 
             x: 5,
             transition: { duration: 0.15 }

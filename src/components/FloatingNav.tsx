@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { User, Briefcase, GraduationCap, Code, FolderOpen, Mail } from "lucide-react";
 
@@ -27,14 +28,14 @@ export default function FloatingNav() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
     >
-      <div className="mx-auto max-w-full flex justify-center gap-1 sm:gap-2 p-2 sm:p-3 bg-black/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 pointer-events-auto overflow-hidden">
+      <div className="mx-auto max-w-full flex justify-center gap-1 sm:gap-2 p-2 sm:p-3 theme-nav rounded-2xl pointer-events-auto overflow-hidden">
         {navItems.map((item, index) => (
           <motion.button
             key={item.href}
             onClick={(e) => handleScroll(e, item.href)}
             className={`group relative flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-bold px-2 sm:px-4 py-2 rounded-xl transition-all duration-150 
-              hover:bg-${item.color}-500/20 hover:shadow-lg hover:shadow-${item.color}-500/25 
-              text-${item.color}-300 hover:text-${item.color}-200 font-space flex-shrink-0 min-w-0`}
+              hover:bg-${item.color}-100/80 dark:hover:bg-${item.color}-500/20 hover:shadow-lg hover:shadow-${item.color}-500/25 
+              theme-text-${item.color} font-space flex-shrink-0 min-w-0`}
             whileHover={{ 
               y: -2,
               transition: { duration: 0.15, ease: "easeOut" }
