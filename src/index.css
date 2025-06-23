@@ -146,21 +146,21 @@
     @apply text-gray-900 dark:text-white;
   }
 
-  /* Text hierarchy - theme aware */
+  /* Text hierarchy - theme aware with better contrast */
   .theme-text-primary {
     @apply text-gray-900 dark:text-white;
   }
 
   .theme-text-secondary {
-    @apply text-gray-700 dark:text-gray-300;
+    @apply text-gray-800 dark:text-gray-200;
   }
 
   .theme-text-muted {
-    @apply text-gray-600 dark:text-gray-400;
+    @apply text-gray-700 dark:text-gray-300;
   }
 
   .theme-text-accent {
-    @apply text-gray-800 dark:text-white/80;
+    @apply text-gray-900 dark:text-white;
   }
 
   /* Project card variants for light theme */
@@ -225,79 +225,79 @@
     @apply hover:border-green-300 dark:hover:border-green-500/40;
   }
 
-  /* Color variants for text in light theme */
+  /* Color variants for text in light theme - improved contrast */
   .theme-text-cyan {
-    @apply text-cyan-700 dark:text-cyan-300;
+    @apply text-cyan-800 dark:text-cyan-300;
   }
 
   .theme-text-purple {
-    @apply text-purple-700 dark:text-purple-300;
+    @apply text-purple-800 dark:text-purple-300;
   }
 
   .theme-text-blue {
-    @apply text-blue-700 dark:text-blue-300;
+    @apply text-blue-800 dark:text-blue-300;
   }
 
   .theme-text-green {
-    @apply text-green-700 dark:text-green-300;
+    @apply text-green-800 dark:text-green-300;
   }
 
   .theme-text-pink {
-    @apply text-pink-700 dark:text-pink-300;
+    @apply text-pink-800 dark:text-pink-300;
   }
 
   .theme-text-orange {
-    @apply text-orange-700 dark:text-orange-300;
+    @apply text-orange-800 dark:text-orange-300;
   }
 
-  /* Gradient text variants */
+  /* Gradient text variants - improved contrast */
   .theme-gradient-cyan {
-    @apply bg-gradient-to-r from-cyan-600 to-cyan-700 dark:from-cyan-300 dark:to-cyan-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-700 to-cyan-800 dark:from-cyan-300 dark:to-cyan-400 bg-clip-text text-transparent;
   }
 
   .theme-gradient-purple {
-    @apply bg-gradient-to-r from-purple-600 to-purple-700 dark:from-purple-300 dark:to-purple-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-700 to-purple-800 dark:from-purple-300 dark:to-purple-400 bg-clip-text text-transparent;
   }
 
   .theme-gradient-blue {
-    @apply bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-300 dark:to-blue-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-700 to-blue-800 dark:from-blue-300 dark:to-blue-400 bg-clip-text text-transparent;
   }
 
   .theme-gradient-green {
-    @apply bg-gradient-to-r from-green-600 to-green-700 dark:from-green-300 dark:to-green-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-green-700 to-green-800 dark:from-green-300 dark:to-green-400 bg-clip-text text-transparent;
   }
 
   .theme-gradient-pink {
-    @apply bg-gradient-to-r from-pink-600 to-pink-700 dark:from-pink-300 dark:to-pink-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-pink-700 to-pink-800 dark:from-pink-300 dark:to-pink-400 bg-clip-text text-transparent;
   }
 
   .theme-gradient-orange {
-    @apply bg-gradient-to-r from-orange-600 to-orange-700 dark:from-orange-300 dark:to-orange-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-orange-700 to-orange-800 dark:from-orange-300 dark:to-orange-400 bg-clip-text text-transparent;
   }
 
-  /* Icon colors */
+  /* Icon colors - improved contrast */
   .theme-icon-cyan {
-    @apply text-cyan-600 dark:text-cyan-300;
+    @apply text-cyan-700 dark:text-cyan-300;
   }
 
   .theme-icon-purple {
-    @apply text-purple-600 dark:text-purple-300;
+    @apply text-purple-700 dark:text-purple-300;
   }
 
   .theme-icon-blue {
-    @apply text-blue-600 dark:text-blue-300;
+    @apply text-blue-700 dark:text-blue-300;
   }
 
   .theme-icon-green {
-    @apply text-green-600 dark:text-green-300;
+    @apply text-green-700 dark:text-green-300;
   }
 
   .theme-icon-pink {
-    @apply text-pink-600 dark:text-pink-300;
+    @apply text-pink-700 dark:text-pink-300;
   }
 
   .theme-icon-orange {
-    @apply text-orange-600 dark:text-orange-300;
+    @apply text-orange-700 dark:text-orange-300;
   }
 
   /* Skills tag variants */
