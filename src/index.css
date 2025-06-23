@@ -165,62 +165,62 @@
 
   /* Project card variants for light theme */
   .theme-project-cyan {
-    @apply bg-cyan-50/80 dark:bg-gradient-to-br dark:from-cyan-500/8 dark:to-transparent;
+    @apply bg-cyan-50/80 dark:bg-cyan-500/5;
     @apply border-cyan-200 dark:border-cyan-500/20;
     @apply hover:border-cyan-300 dark:hover:border-cyan-500/40;
   }
 
   .theme-project-purple {
-    @apply bg-purple-50/80 dark:bg-gradient-to-br dark:from-purple-500/8 dark:to-transparent;
+    @apply bg-purple-50/80 dark:bg-purple-500/5;
     @apply border-purple-200 dark:border-purple-500/20;
     @apply hover:border-purple-300 dark:hover:border-purple-500/40;
   }
 
   .theme-project-blue {
-    @apply bg-blue-50/80 dark:bg-gradient-to-br dark:from-blue-500/8 dark:to-transparent;
+    @apply bg-blue-50/80 dark:bg-blue-500/5;
     @apply border-blue-200 dark:border-blue-500/20;
     @apply hover:border-blue-300 dark:hover:border-blue-500/40;
   }
 
   .theme-project-green {
-    @apply bg-green-50/80 dark:bg-gradient-to-br dark:from-green-500/8 dark:to-transparent;
+    @apply bg-green-50/80 dark:bg-green-500/5;
     @apply border-green-200 dark:border-green-500/20;
     @apply hover:border-green-300 dark:hover:border-green-500/40;
   }
 
   .theme-project-pink {
-    @apply bg-pink-50/80 dark:bg-gradient-to-br dark:from-pink-500/8 dark:to-transparent;
+    @apply bg-pink-50/80 dark:bg-pink-500/5;
     @apply border-pink-200 dark:border-pink-500/20;
     @apply hover:border-pink-300 dark:hover:border-pink-500/40;
   }
 
   .theme-project-orange {
-    @apply bg-orange-50/80 dark:bg-gradient-to-br dark:from-orange-500/8 dark:to-transparent;
+    @apply bg-orange-50/80 dark:bg-orange-500/5;
     @apply border-orange-200 dark:border-orange-500/20;
     @apply hover:border-orange-300 dark:hover:border-orange-500/40;
   }
 
   /* Experience card variants */
   .theme-experience-cyan {
-    @apply bg-cyan-50/60 dark:bg-gradient-to-br dark:from-cyan-500/8 dark:to-transparent;
+    @apply bg-cyan-50/60 dark:bg-cyan-500/5;
     @apply border-cyan-200 dark:border-cyan-500/20;
     @apply hover:border-cyan-300 dark:hover:border-cyan-500/40;
   }
 
   .theme-experience-purple {
-    @apply bg-purple-50/60 dark:bg-gradient-to-br dark:from-purple-500/8 dark:to-transparent;
+    @apply bg-purple-50/60 dark:bg-purple-500/5;
     @apply border-purple-200 dark:border-purple-500/20;
     @apply hover:border-purple-300 dark:hover:border-purple-500/40;
   }
 
   .theme-experience-blue {
-    @apply bg-blue-50/60 dark:bg-gradient-to-br dark:from-blue-500/8 dark:to-transparent;
+    @apply bg-blue-50/60 dark:bg-blue-500/5;
     @apply border-blue-200 dark:border-blue-500/20;
     @apply hover:border-blue-300 dark:hover:border-blue-500/40;
   }
 
   .theme-experience-green {
-    @apply bg-green-50/60 dark:bg-gradient-to-br dark:from-green-500/8 dark:to-transparent;
+    @apply bg-green-50/60 dark:bg-green-500/5;
     @apply border-green-200 dark:border-green-500/20;
     @apply hover:border-green-300 dark:hover:border-green-500/40;
   }
